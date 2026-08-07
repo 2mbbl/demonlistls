@@ -1,7 +1,7 @@
 [
     {
         "role": "owner",
-        "name": "<h2>OWNER</h2>",
+        "name": "OWNER",
         "link": "#"
     },
     {
@@ -10,8 +10,10 @@
         "link": "https://www.youtube.com/@2mbbl"
     },
     {
+    },
+    {
         "role": "admin",
-        "name": "<h2>ADMIN</h2>",
+        "name": "ADMIN",
         "link": "#"
     },
     {
@@ -20,18 +22,24 @@
         "link": "https://www.youtube.com/@ddat_69"
     },
     {
+    },
+    {
         "role": "helper",
-        "name": "<h2>MODERATOR</h2>",
+        "name": "MODERATOR",
         "link": "#"
+    },
+    {
     },
     {
         "role": "trial",
-        "name": "<h2>HELPER</h2>",
+        "name": "HELPER",
         "link": "#"
     },
     {
+    },
+    {
         "role": "dev",
-        "name": "<h2>TESTER</H2>",
+        "name": "TESTER",
         "link": "#"
     }
 ]
