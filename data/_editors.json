@@ -10,6 +10,7 @@
         "link": "https://www.youtube.com/@2mbbl"
     },
     {
+        "role": "owner"
     },
     {
         "role": "admin",
@@ -22,6 +23,7 @@
         "link": "https://www.youtube.com/@ddat_69"
     },
     {
+        "role": "admin"
     },
     {
         "role": "helper",
@@ -29,6 +31,7 @@
         "link": "#"
     },
     {
+        "role": "helper"
     },
     {
         "role": "trial",
@@ -36,6 +39,7 @@
         "link": "#"
     },
     {
+        "role": "trial"
     },
     {
         "role": "dev",
