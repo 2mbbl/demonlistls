@@ -2,10 +2,10 @@ import { store } from "../main.js";
 import { embed } from "../util.js";
 import { score } from "../score.js";
 import { fetchEditors, fetchList } from "../content.js";
-
+ 
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
-
+ 
 const roleIconMap = {
     owner: "crown",
     admin: "user-gear",
@@ -13,7 +13,7 @@ const roleIconMap = {
     dev: "code",
     trial: "user-lock",
 };
-
+ 
 export default {
     components: { Spinner, LevelAuthors },
     template: `
@@ -91,7 +91,7 @@ export default {
                     <template v-if="editors">
                         <h3>Đội ngũ quản lý</h3>
                         <ol class="editors">
-                            <li v-for="editor in editors">
+                            <li v-for="(editor, index) in editors" :class="{ 'group-start': index > 0 && editors[index - 1].role !== editor.role }">
                                 <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" :alt="editor.role">
                                 <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
                                 <p v-else>{{ editor.name }}</p>
@@ -141,7 +141,7 @@ export default {
             if (!this.level.showcase) {
                 return embed(this.level.verification);
             }
-
+ 
             return embed(
                 this.toggledShowcase
                     ? this.level.showcase
@@ -153,7 +153,7 @@ export default {
         // Hide loading spinner
         this.list = await fetchList();
         this.editors = await fetchEditors();
-
+ 
         // Error handling
         if (!this.list) {
             this.errors = [
@@ -171,7 +171,7 @@ export default {
                 this.errors.push("Failed to load list editors.");
             }
         }
-
+ 
         this.loading = false;
     },
     methods: {
@@ -179,3 +179,4 @@ export default {
         score,
     },
 };
+ 
