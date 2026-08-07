@@ -39,12 +39,12 @@ export default {
                         ><span v-if="index < creators.length - 1">, </span>
                     </template>
                 </p>
-                <div class="type-title-sm">Verifier</div>
+                <div class="type-title-sm"></div>
                 <p class="type-body">
                     <span>{{ verifier }}</span>
                 </p>
             </template>
-            <div class="type-title-sm">Publisher</div>
+            <div class="type-title-sm"></div>
             <p class="type-body">
                 <span>{{ author }}</span>
             </p>
