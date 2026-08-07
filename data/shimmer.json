@@ -1,9 +1,12 @@
 {
-    "id": 94156085,
-    "name": "shimmer",
-    "creators": ["Amplitron"],
-    "verifier": "ThanhBinhGD",
-    "verification": "https://www.youtube.com/watch?v=T6rXSZ38TyU",
-    "percentToQualify": 42,
-    "password": "IDK",
+  "id": 94156085,
+  "name": "shimmer",
+  "creators": [
+    "Amplitron"
+  ],
+  "verifier": "ThanhBinhGD",
+  "verification": "https://www.youtube.com/watch?v=T6rXSZ38TyU",
+  "percentToQualify": 42,
+  "password": "IDK",
+  "records": []
 }
