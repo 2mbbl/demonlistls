@@ -1,10 +1,11 @@
-import { round, score } from './score.js';
 
+import { round, score } from './score.js';
+ 
 /**
  * Path to directory containing `_list.json` and all levels
  */
 const dir = '/data';
-
+ 
 export async function fetchList() {
     const listResult = await fetch(`${dir}/_list.json`);
     try {
@@ -35,7 +36,7 @@ export async function fetchList() {
         return null;
     }
 }
-
+ 
 export async function fetchEditors() {
     try {
         const editorsResults = await fetch(`${dir}/_editors.json`);
@@ -45,10 +46,10 @@ export async function fetchEditors() {
         return null;
     }
 }
-
+ 
 export async function fetchLeaderboard() {
     const list = await fetchList();
-
+ 
     const scoreMap = {};
     const errs = [];
     list.forEach(([level, err], rank) => {
@@ -56,7 +57,7 @@ export async function fetchLeaderboard() {
             errs.push(err);
             return;
         }
-
+ 
         // Verification
         const verifier = Object.keys(scoreMap).find(
             (u) => u.toLowerCase() === level.verifier.toLowerCase(),
@@ -73,9 +74,19 @@ export async function fetchLeaderboard() {
             score: score(rank + 1, 100, level.percentToQualify),
             link: level.verification,
         });
-
+ 
         // Records
         level.records.forEach((record) => {
+            // Skip the verifier's own 100% record, since it's already
+            // counted above in the "Verified" section. Without this,
+            // the verifier would be scored twice for the same level.
+            if (
+                record.percent === 100 &&
+                record.user.toLowerCase() === level.verifier.toLowerCase()
+            ) {
+                return;
+            }
+ 
             const user = Object.keys(scoreMap).find(
                 (u) => u.toLowerCase() === record.user.toLowerCase(),
             ) || record.user;
@@ -94,7 +105,7 @@ export async function fetchLeaderboard() {
                 });
                 return;
             }
-
+ 
             progressed.push({
                 rank: rank + 1,
                 level: level.name,
@@ -104,21 +115,21 @@ export async function fetchLeaderboard() {
             });
         });
     });
-
+ 
     // Wrap in extra Object containing the user and total score
     const res = Object.entries(scoreMap).map(([user, scores]) => {
         const { verified, completed, progressed } = scores;
         const total = [verified, completed, progressed]
             .flat()
             .reduce((prev, cur) => prev + cur.score, 0);
-
+ 
         return {
             user,
             total: round(total),
             ...scores,
         };
     });
-
+ 
     // Sort by total score
     return [res.sort((a, b) => b.total - a.total), errs];
 }
