@@ -1,17 +1,10 @@
 {
-    "id": "IDLVL",
-    "name": "NameLVL",
-    "creators": ["CreatorLVL"],
-    "verifier": "NGUOICHOI",  
-    "verification": "LinkYT", 
-    "percentToQualify": 100, 
+    "id": "119829177",
+    "name": "NYUTOPIA",
+    "creators": ["Tornabro"],
+    "verifier": "2mbbl",  
+    "verification": "https://www.youtube.com/watch?v=mUMDwWQPRwc", 
+    "percentToQualify": 59, 
     "password": "IDK", 
-    "records": [
-        {
-            "user": "NameUSER",
-            "link": "LinkYT", 
-            "percent": 100, 
-            "hz": 240 
-        }
-    ]
+    "records": []
 }
