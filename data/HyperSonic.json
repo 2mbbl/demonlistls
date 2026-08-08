@@ -1,0 +1,17 @@
+{
+    "id": "30219145",
+    "name": "HyperSonic",
+    "creators": ["ZenthicAlpha", "and more"],
+    "verifier": "ThanhBinhGD",  
+    "verification": "https://www.youtube.com/watch?v=EbTbxyduQL4", 
+    "percentToQualify": 73, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "LumiD",
+            "link": "https://www.youtube.com/watch?v=FDYBKrQlqp0&t=6s", 
+            "percent": 100, 
+            "hz": 120 
+        }
+    ]
+}
