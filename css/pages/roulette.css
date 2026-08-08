@@ -129,31 +129,3 @@
         align-self: stretch;
     }
 }
-
-@media screen and (max-width: 860px) {
-    .page-roulette {
-        display: flex;
-        flex-direction: column;
-    }
-    .page-roulette .toasts-container {
-        order: -1;
-        margin: 1rem;
-        padding: 0;
-    }
-    .page-roulette .sidebar {
-        padding: 1.5rem 1rem;
-    }
-    .page-roulette .levels-container {
-        padding-inline: 1rem;
-    }
-    .page-roulette .levels .level {
-        grid-template-columns: 1fr;
-    }
-    .page-roulette .levels .level .actions {
-        grid-column: 1;
-        flex-wrap: wrap;
-    }
-    .page-roulette .levels .level .actions input[type="number"] {
-        min-width: 0;
-    }
-}
