@@ -6,10 +6,24 @@
 .page-list .list-container {
     padding-inline: 1rem;
 }
+.page-list .list-search {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+}
+.page-list .list-search::placeholder {
+    color: var(--color-on-background);
+    opacity: 0.6;
+}
 .page-list .meta-container {
     padding-right: 2rem;
 }
- 
+
 .page-list .list {
     table-layout: auto;
 }
