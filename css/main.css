@@ -76,13 +76,14 @@ header .logo .logo__text {
     gap: 0.4rem;
 }
 header .logo .logo__badge {
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 1;
-    padding: 0.2rem 0.4rem;
+    padding: 0.3rem 0.5rem;
     border-radius: 0.25rem;
     background-color: rgba(255, 255, 255, 0.2);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0rem;
+    font-family: "calibriTên font khác", sans-serif;
 }
 header .nav {
     flex: 1;
