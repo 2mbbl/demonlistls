@@ -1,0 +1,17 @@
+{
+    "id": "20159880",
+    "name": "Plasma Pulse III",
+    "creators": ["xSmokes", "Giron"],
+    "verifier": "ThanhBinhGD",  
+    "verification": "https://www.youtube.com/watch?v=oWARUfq69L8", 
+    "percentToQualify": 72, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "Ly May",
+            "link": "https://www.youtube.com/watch?v=TiWwE3rX5oE", 
+            "percent": 100, 
+            "hz": 60 
+        }
+    ]
+}
