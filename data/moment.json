@@ -1,0 +1,17 @@
+{
+    "id": "68848817",
+    "name": "moment",
+    "creators": ["icedcave", "Lexycat", "Stormfly"],
+    "verifier": "NeekolaTeslaa",  
+    "verification": "https://www.youtube.com/watch?v=EiE_FbE683o", 
+    "percentToQualify": 75, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thoGMD",
+            "link": "https://youtu.be/Wj-tjwcPz04?si=lciB2c7IVdIHHwmK", 
+            "percent": 100, 
+            "hz": 144 
+        }
+    ]
+}
