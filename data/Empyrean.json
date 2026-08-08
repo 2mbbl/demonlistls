@@ -1,0 +1,17 @@
+{
+    "id": "92957491",
+    "name": "Empyrean",
+    "creators": ["kivvvi"],
+    "verifier": "NeekolaTeslaa",  
+    "verification": "https://youtu.be/8tP6KZXK71E?si=BK8CKJVL0ON9bx7Y", 
+    "percentToQualify": 67, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thanhbinhGD",
+            "link": "https://www.youtube.com/", 
+            "percent": 100, 
+            "hz": 144 
+        }
+    ]
+}
