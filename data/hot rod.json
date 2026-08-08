@@ -1,0 +1,17 @@
+{
+    "id": "95355264",
+    "name": "hot rod",
+    "creators": ["stcubing"],
+    "verifier": "NeekolaTeslaa",  
+    "verification": "https://www.youtube.com/watch?v=j3tm335f_1Q", 
+    "percentToQualify": 69, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "Ly May",
+            "link": "https://www.youtube.com/watch?v=TwQFfgAWkDk", 
+            "percent": 100, 
+            "hz": 60 
+        }
+    ]
+}
