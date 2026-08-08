@@ -15,20 +15,20 @@
         },
         {
             "user": "2mbbl",
-            "link": "https://www.youtube.com/watch?v=pysXMfjtlDg&t=2s"
-            "percent": 100
+            "link": "https://www.youtube.com/watch?v=pysXMfjtlDg&t=2s",
+            "percent": 100,
             "hz": 240
         },
         {
             "user": "thoGMD",
             "link": "https://www.youtube.com/watch?v=6NmoyJTJ4M8&t=1s",
-            "percent": 100
+            "percent": 100,
             "hz": 240
         },
         {
-            "user": "dk303"
-            "link": "https://www.youtube.com/watch?v=E1Pe8GCwc5c&rco=1"
-            "percent": 100
+            "user": "dk303",
+            "link": "https://www.youtube.com/watch?v=E1Pe8GCwc5c&rco=1",
+            "percent": 100,
             "hz": "CBF"
         }
     ]
