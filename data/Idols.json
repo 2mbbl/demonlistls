@@ -1,0 +1,17 @@
+{
+    "id": "48175126",
+    "name": "Idols",
+    "creators": ["Zafkiel7"],
+    "verifier": "thanhbinhGD",  
+    "verification": "https://youtu.be/QUxpOtMF5yw?si=puvQi_jSqyYpxG-q", 
+    "percentToQualify": 80, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/", 
+            "percent": 100, 
+            "hz": ?
+        }
+    ]
+}
