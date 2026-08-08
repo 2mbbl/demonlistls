@@ -6,13 +6,6 @@ export const store = Vue.reactive({
         this.dark = !this.dark;
         localStorage.setItem('dark', JSON.stringify(this.dark));
     },
-    mobileNavOpen: false,
-    toggleMobileNav() {
-        this.mobileNavOpen = !this.mobileNavOpen;
-    },
-    closeMobileNav() {
-        this.mobileNavOpen = false;
-    },
 });
 
 const app = Vue.createApp({
