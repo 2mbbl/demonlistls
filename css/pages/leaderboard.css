@@ -91,24 +91,3 @@
 .page-leaderboard .player .table a:hover {
     text-decoration: underline;
 }
-
-@media screen and (max-width: 860px) {
-    .page-leaderboard {
-        height: auto;
-        display: block;
-    }
-    .page-leaderboard .error-container,
-    .page-leaderboard .board-container,
-    .page-leaderboard .player-container {
-        padding-inline: 1rem;
-    }
-    .page-leaderboard .board {
-        display: table;
-    }
-    .page-leaderboard .player {
-        padding-right: 0;
-    }
-    .page-leaderboard .player .table {
-        table-layout: auto;
-    }
-}
