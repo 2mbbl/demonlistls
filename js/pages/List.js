@@ -38,7 +38,7 @@ export default {
                             <p v-else class="type-label-lg">Legacy</p>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-                            <button @click="selected = i">
+                            <button @click="selectLevel(i)">
                                 <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                             </button>
                         </td>
@@ -193,6 +193,19 @@ export default {
             }
             const name = level?.name || err || "";
             return name.toLowerCase().includes(this.search.trim().toLowerCase());
+        },
+        selectLevel(i) {
+            this.selected = i;
+            // On mobile, the sections stack vertically instead of side-by-side,
+            // so scroll the level info into view after picking one.
+            this.$nextTick(() => {
+                if (window.matchMedia("(max-width: 860px)").matches) {
+                    const el = document.querySelector(".page-list .level-container");
+                    if (el) {
+                        el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                }
+            });
         },
     },
 };
