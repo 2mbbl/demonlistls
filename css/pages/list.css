@@ -165,4 +165,36 @@
     .page-list .level-container .level .records {
         table-layout: auto;
     }
+
+    /* Drill-down: level detail replaces the list instead of stacking below it */
+    .page-list .level-back {
+        display: flex;
+        align-items: center;
+        border: none;
+        background: transparent;
+        color: var(--color-on-background);
+        opacity: 0.75;
+        cursor: pointer;
+        padding: 0;
+        margin-bottom: 1rem;
+        font: inherit;
+    }
+    .page-list .level-back:hover {
+        opacity: 1;
+    }
+    .page-list .level-container {
+        display: none;
+    }
+    .page-list.mobile-detail-open .list-container,
+    .page-list.mobile-detail-open .meta-container {
+        display: none;
+    }
+    .page-list.mobile-detail-open .level-container {
+        display: block;
+    }
+}
+@media screen and (min-width: 861px) {
+    .page-list .level-back {
+        display: none;
+    }
 }
