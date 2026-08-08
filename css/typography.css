@@ -207,6 +207,21 @@ input[type="number"],
     display: table;
 }
 
+@media screen and (max-width: 480px) {
+    h1,
+    .type-h1,
+    .type-headline-lg {
+        font-size: 34px;
+        line-height: 38px;
+    }
+    h2,
+    .type-h2,
+    .type-headline-md {
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+
 p,
 .type-body {
     font-family: "Lexend Deca", sans-serif;
