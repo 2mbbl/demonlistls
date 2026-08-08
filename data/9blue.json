@@ -1,0 +1,35 @@
+{
+    "id": "95061038",
+    "name": "9blue",
+    "creators": ["Sardina"],
+    "verifier": "2mbbl",  
+    "verification": "https://youtu.be/jO7CNZhW3SI?si=7B4pi9jMNYjBkNbb", 
+    "percentToQualify": 67, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thanhbinhGD",
+            "link": "https://youtu.be/SMWpeF4tcbc?si=z1lE1LVzoxaNQPE4", 
+            "percent": 100, 
+            "hz": 120 
+        },
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=NbnV8gjocsg", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "JunhaHoangGD",
+            "link": "https://www.youtube.com/", 
+            "percent": 100, 
+            "hz": 0 
+        },
+        {
+            "user": "EasterGD",
+            "link": "https://www.youtube.com/", 
+            "percent": 100, 
+            "hz": 0 
+        }
+    ]
+}
