@@ -70,6 +70,15 @@ header .logo .logo__img {
     height: 2.5rem;
     width: auto;
 }
+header .logo .logo__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+header .logo .logo__text p {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
 header .nav {
     flex: 1;
 }
