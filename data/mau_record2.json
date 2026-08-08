@@ -1,17 +1,11 @@
 {
-    "id": "IDLVL",
-    "name": "NameLVL",
-    "creators": ["CreatorLVL"],
-    "verifier": "NGUOICHOI",  
-    "verification": "LinkYT", 
-    "percentToQualify": 100, 
+    "id": "88913586",
+    "name": "Xronier",
+    "creators": ["(じの) JinoBeats ♫"],
+    "verifier": "2mbbl",  
+    "verification": "https://youtu.be/HOjkZ71N4EI?si=TZI7CRGNFvndh0b3", 
+    "percentToQualify": 80, 
     "password": "IDK", 
     "records": [
-        {
-            "user": "NameUSER",
-            "link": "LinkYT", 
-            "percent": 100, 
-            "hz": 240 
-        }
     ]
 }
