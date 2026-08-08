@@ -14,8 +14,9 @@
             "hz": 60 
         },
         {
-            "user": "thoGMD"
-            "link": "https://www.youtube.com/watch?v=hI0q-MLLOOE"
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=hI0q-MLLOOE",
+            "percent": 100,
             "hz": 144
         }
     ]
