@@ -1,0 +1,17 @@
+{
+    "id": "69459902",
+    "name": "nowdead",
+    "creators": ["meowdead"],
+    "verifier": "ThanhBinhGD",  
+    "verification": "https://www.youtube.com/watch?v=OVdYKB5hSnw", 
+    "percentToQualify": 78, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "2mbbl",
+            "link": "#", 
+            "percent": 89, 
+            "hz": 240 
+        }
+    ]
+}
