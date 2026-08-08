@@ -1,0 +1,17 @@
+{
+    "id": "138356396",
+    "name": "BRUTAL",
+    "creators": ["Tshack"],
+    "verifier": "2mbbl",  
+    "verification": "https://youtu.be/u1LwDq09Lbw?si=UVtSqnDg59M-lFaN", 
+    "percentToQualify": 65, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thanhbinhGD",
+            "link": "https://youtu.be/fAztXBocwcw?si=5Kv2ZPvTIIYom9p8", 
+            "percent": 100, 
+            "hz": 144 
+        }
+    ]
+}
