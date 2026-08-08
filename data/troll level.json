@@ -2,9 +2,16 @@
     "id": "76196489",
     "name": "troll level",
     "creators": ["Lexycat"],
-    "verifier": "Icecaved02",  
+    "verifier": "Banggmd",  
     "verification": "https://youtu.be/l9ySDrRI5qE?si=iZWkB1TsN53cAyTY", 
     "percentToQualify": 61, 
     "password": "IDK", 
-    "records": []
+    "records": [
+{
+"user": "ThanhBinhGD",
+"link": "https://youtu.be/5bvOVXGTWC4?si=h9U5655gzh17LOhG",
+"percent": 100,
+"hz": 90
+}
+]
 }
