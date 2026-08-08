@@ -1,0 +1,17 @@
+{
+    "id": "59899374",
+    "name": "Prismatic Haze",
+    "creators": ["Cirtrax"],
+    "verifier": "thanhbinhGD",  
+    "verification": "https://www.youtube.com/watch?v=sby6PQyr72o", 
+    "percentToQualify": 65, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "Ly May",
+            "link": "https://www.youtube.com/", 
+            "percent": 65, 
+            "hz": 60 
+        }
+    ]
+}
