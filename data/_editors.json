@@ -25,12 +25,12 @@
         "link": "#"
     },
     {
-        "role": "trial",
+        "role": "dev",
         "name": "> HELPER <",
         "link": "#"
     },
     {
-        "role": "dev",
+        "role": "trial",
         "name": "> TESTER <",
         "link": "#"
     }
