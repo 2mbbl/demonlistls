@@ -121,7 +121,7 @@ export default {
                         Từ Extreme Demon trở lên cần video chứng minh và video thô
                     </p>
                     <p>
-                        The recording must also show the player hit the endwall, or the completion will be invalidated.
+                        Từ top 176 trở đi sẽ không được cộng điểm
                     </p>
                     <p>
                         Có thể sử dụng link xác nhận hoàn thành trong GDListHub (GDVN), ví dụ: https://www.gdlisthub.dev/vi/record/8fd1509d-fc0b-4771-8f66-0808d009af47/119829177?id=3142
