@@ -1,0 +1,17 @@
+{
+    "id": "83825373",
+    "name": "Overtime",
+    "creators": ["KlaurosssS", "and more"],
+    "verifier": "2mbbl",  
+    "verification": "https://youtu.be/ryd3nIEUyvY", 
+    "percentToQualify": 76, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "ThanhBinhGD",
+            "link": "https://www.youtube.com/watch?v=Re02uUQeuqg&t=2s", 
+            "percent": 100, 
+            "hz": 120 
+        }
+    ]
+}
