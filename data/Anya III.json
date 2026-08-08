@@ -1,0 +1,41 @@
+{
+    "id": "81257586",
+    "name": "Anya III",
+    "creators": ["Anya21"],
+    "verifier": "NeekolaTeslaa",  
+    "verification": "https://youtu.be/r0AigfFF0wc?si=X36tQLlcAyXjMzFv", 
+    "percentToQualify": 61, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "2mbbl",
+            "link": "https://youtu.be/XH_NisAQqwo?si=or34KPtPxYD4IRfD", 
+            "percent": 100, 
+            "hz": 144 
+        },
+        {
+            "user": "thanhbinhGD",
+            "link": "https://youtu.be/p2JfsMilID0?si=B6L8_BqaLpIb7DyO", 
+            "percent": 100, 
+            "hz": 120 
+        },
+        {
+            "user": "Icecaved02",
+            "link": "https://www.youtube.com/watch?v=oC1VFdlyGXs", 
+            "percent": 100, 
+            "hz": 144 
+        },
+        {
+            "user": "thoGMD",
+            "link": "https://youtu.be/6uAytVQj3M4?si=I-kpoyCSrK3IzYEj", 
+            "percent": 100, 
+            "hz": 120 
+        },
+        {
+            "user": "HoshinoLSGD",
+            "link": "https://www.youtube.com/", 
+            "percent": 64, 
+            "hz": 144 
+        }
+    ]
+}
