@@ -26,7 +26,7 @@ export default {
                 <p class="type-body">
                     <span>{{ author }}</span>
                 </p>
-                <div class="type-title-sm">Verifier/First victor</div>
+                <div class="type-title-sm">First victor</div>
                 <p class="type-body">
                     <span>{{ verifier }}</span>
                 </p>
