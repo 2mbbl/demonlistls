@@ -1,0 +1,17 @@
+{
+    "id": "75857309",
+    "name": "Sephtis",
+    "creators": ["deThe"],
+    "verifier": "NeekolaTeslaa",  
+    "verification": "https://youtu.be/viMy03n5WXI?si=YIGMn6l5rQTuQow2", 
+    "percentToQualify": 64, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "2mbbl",
+            "link": "https://youtu.be/y3grX3TMdy4", 
+            "percent": 100, 
+            "hz": 60 
+        }
+    ]
+}
