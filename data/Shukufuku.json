@@ -1,0 +1,17 @@
+{
+    "id": "93916671",
+    "name": "Shukufuku",
+    "creators": ["Joker179114", "and more"],
+    "verifier": "ThanhBinhGD",  
+    "verification": "https://www.youtube.com/watch?v=4X-wBkGmkxM", 
+    "percentToQualify": 81, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=w8HU-PGS5fE", 
+            "percent": 100, 
+            "hz": 144 
+        }
+    ]
+}
