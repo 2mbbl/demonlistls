@@ -1,0 +1,17 @@
+{
+    "id": "76670086",
+    "name": "phantasmagoria",
+    "creators": ["whlt"],
+    "verifier": "NeekolaTeslaa",  
+    "verification": "https://www.youtube.com/watch?v=t3B9jH7GtYg", 
+    "percentToQualify": 72, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "ThanhBinhGD",
+            "link": "https://www.youtube.com/watch?v=HSRQzITQ4iI&t=6s", 
+            "percent": 100, 
+            "hz": 120 
+        }
+    ]
+}
