@@ -71,12 +71,11 @@ export async function fetchLeaderboard() {
         verified.push({
             rank: rank + 1,
             level: level.name,
-            score: recordScore(baseRating, 1),
+            score: baseRating,
             link: level.verification,
         });
  
         // Records
-        let completedPosition = 1;
         level.records.forEach((record) => {
             // Skip the verifier's own 100% record, since it's already
             // counted above in the "Verified" section. Without this,
@@ -98,11 +97,10 @@ export async function fetchLeaderboard() {
             };
             const { completed, progressed } = scoreMap[user];
             if (record.percent === 100) {
-                completedPosition += 1;
                 completed.push({
                     rank: rank + 1,
                     level: level.name,
-                    score: recordScore(baseRating, completedPosition),
+                    score: baseRating,
                     link: record.link,
                 });
                 return;
@@ -116,6 +114,19 @@ export async function fetchLeaderboard() {
                 link: record.link,
             });
         });
+    });
+ 
+    // Tier each user's own 100% records (verified + completed combined)
+    // by their own rating, highest first — position 1 = their single
+    // highest-rated 100% completion, regardless of whether it was as
+    // verifier or as a regular record holder.
+    Object.values(scoreMap).forEach((scores) => {
+        const { verified, completed } = scores;
+        [...verified, ...completed]
+            .sort((a, b) => b.score - a.score)
+            .forEach((record, index) => {
+                record.score = recordScore(record.score, index + 1);
+            });
     });
  
     // Second pass: tier each user's progress record scores based on how
