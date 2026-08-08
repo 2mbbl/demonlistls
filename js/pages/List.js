@@ -20,7 +20,7 @@ export default {
         <main v-if="loading">
             <Spinner></Spinner>
         </main>
-        <main v-else class="page-list">
+        <main v-else class="page-list" :class="{ 'mobile-detail-open': mobileDetailOpen }">
             <div class="list-container">
                 <input
                     type="text"
@@ -46,6 +46,9 @@ export default {
                 </table>
             </div>
             <div class="level-container">
+                <button class="level-back type-label-lg" @click="closeMobileDetail()">
+                    <span>‹ Danh sách</span>
+                </button>
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
@@ -141,7 +144,8 @@ export default {
         search: "",
         errors: [],
         roleIconMap,
-        store
+        store,
+        mobileDetailOpen: false,
     }),
     computed: {
         level() {
@@ -196,16 +200,14 @@ export default {
         },
         selectLevel(i) {
             this.selected = i;
-            // On mobile, the sections stack vertically instead of side-by-side,
-            // so scroll the level info into view after picking one.
-            this.$nextTick(() => {
-                if (window.matchMedia("(max-width: 860px)").matches) {
-                    const el = document.querySelector(".page-list .level-container");
-                    if (el) {
-                        el.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }
-                }
-            });
+            if (window.matchMedia("(max-width: 860px)").matches) {
+                this.mobileDetailOpen = true;
+                this.$nextTick(() => window.scrollTo(0, 0));
+            }
+        },
+        closeMobileDetail() {
+            this.mobileDetailOpen = false;
+            this.$nextTick(() => window.scrollTo(0, 0));
         },
     },
 };
