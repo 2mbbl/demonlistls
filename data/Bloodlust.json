@@ -2,9 +2,9 @@
     "id": "42584142",
     "name": "Bloodlust",
     "creators": ["knobbelboy"],
-    "verifier": "ThanhBinhGD",  // first victor
+    "verifier": "ThanhBinhGD",
     "verification": "https://www.youtube.com/watch?v=l1at4yeFMuI", 
-    "percentToQualify": 62, // minimum %
+    "percentToQualify": 62, 
     "password": "IDK", 
     "records": []
 }
