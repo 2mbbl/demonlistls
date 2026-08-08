@@ -1,0 +1,17 @@
+{
+    "id": "100485888",
+    "name": "STRATUS",
+    "creators": ["Woom"],
+    "verifier": "2mbbl",  
+    "verification": "https://youtu.be/ZHI7v0V4B5E?si=_x32l7ecz3NL7Ot4", 
+    "percentToQualify": 66, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "Datipu",
+            "link": "https://youtu.be/zDtOSrJTPeA?si=OW2WWTZGUPmPlm-S", 
+            "percent": 100, 
+            "hz": 144 
+        }
+    ]
+}
