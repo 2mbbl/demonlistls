@@ -67,16 +67,16 @@ export async function fetchLeaderboard() {
             progressed: [],
         };
         const { verified } = scoreMap[verifier];
+        const baseRating = score(rank + 1, 100, level.percentToQualify);
         verified.push({
             rank: rank + 1,
             level: level.name,
-            score: score(rank + 1, 100, level.percentToQualify),
+            score: recordScore(baseRating, 1),
             link: level.verification,
         });
  
         // Records
-        const baseRating = score(rank + 1, 100, level.percentToQualify);
-        let completedPosition = 0;
+        let completedPosition = 1;
         level.records.forEach((record) => {
             // Skip the verifier's own 100% record, since it's already
             // counted above in the "Verified" section. Without this,
