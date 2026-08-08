@@ -1,0 +1,34 @@
+{
+    "id": "10565740",
+    "name": "Bloodbath",
+    "creators": ["Riot", "and more"],
+    "verifier": "ThanhBinhGD",  
+    "verification": "https://www.youtube.com/watch?v=0msROVBU3gg", 
+    "percentToQualify": 71, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "0bruh",
+            "link": "https://www.youtube.com/watch?v=srhJW-SDGhU", 
+            "percent": 100, 
+            "hz": 180 
+        },
+        {
+            "user": "2mbbl",
+            "link": "https://www.youtube.com/watch?v=pysXMfjtlDg&t=2s"
+            "percent": 100
+            "hz": 240
+        },
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=6NmoyJTJ4M8&t=1s",
+            "percent": 100
+            "hz": 240
+        },
+        {
+            "user": "dk303"
+            "link": "https://www.youtube.com/watch?v=E1Pe8GCwc5c&rco=1"
+            "percent": 100
+            "hz": "CBF"
+    ]
+}
