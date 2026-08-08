@@ -1,0 +1,29 @@
+{
+    "id": "114422869",
+    "name": "RIVERS OF NAZARETH",
+    "creators": ["AudieoVisual"],
+    "verifier": "Datipu",  
+    "verification": "https://www.youtube.com/watch?v=zwZjGRgQuVo", 
+    "percentToQualify": 72, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=wuE3vxPP5Bw", 
+            "percent": 100, 
+            "hz": 120 
+        },
+        {
+            "user": "ThanhBinhGD",
+            "link": "https://www.youtube.com/watch?v=aRRhYXP-DsE",
+            "percent": 100,
+            "hz": 144
+        },
+        {
+            "user": "Banggmd",
+            "link": "https://www.tiktok.com/@bang56hj/video/7537298656416877825?lang=vi-VN",
+            "percent": 76,
+            "hz": 144
+        }
+    ]
+}
