@@ -46,9 +46,6 @@ export default {
                 </table>
             </div>
             <div class="level-container">
-                <button class="level-back type-label-lg" @click="closeMobileDetail()">
-                    <span>‹ Danh sách</span>
-                </button>
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
