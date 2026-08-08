@@ -22,8 +22,17 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
+                <input
+                    type="text"
+                    class="list-search"
+                    v-model="search"
+                    placeholder="Tìm level..."
+                >
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list">
+                    <tr
+                        v-for="([level, err], i) in list"
+                        v-show="matchesSearch(level, err)"
+                    >
                         <td class="rank">
                             <p v-if="i + 1 <= 175" class="type-label-lg">#{{ i + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
@@ -129,6 +138,7 @@ export default {
         editors: [],
         loading: true,
         selected: 0,
+        search: "",
         errors: [],
         roleIconMap,
         store
@@ -177,6 +187,12 @@ export default {
     methods: {
         embed,
         score,
+        matchesSearch(level, err) {
+            if (!this.search.trim()) {
+                return true;
+            }
+            const name = level?.name || err || "";
+            return name.toLowerCase().includes(this.search.trim().toLowerCase());
+        },
     },
 };
- 
