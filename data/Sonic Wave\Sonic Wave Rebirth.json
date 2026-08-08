@@ -1,0 +1,17 @@
+{
+    "id": "26681070/68688849",
+    "name": "Sonic Wave/Sonic Wave Rebirth",
+    "creators": ["Cyclic", "Serponge", "Funnygame"],
+    "verifier": "ThanhBinhGD",  
+    "verification": "https://www.youtube.com/watch?v=tlNhPvlzlxg", 
+    "percentToQualify": 65, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "ThanhBinhGD",
+            "link": "https://www.youtube.com/watch?v=uzuAp8govX0", 
+            "percent": 100, 
+            "hz": 240 
+        }
+    ]
+}
