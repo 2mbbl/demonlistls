@@ -1,0 +1,17 @@
+{
+    "id": "81413188",
+    "name": "Dysphoria",
+    "creators": ["IceboxOG"],
+    "verifier": "NeekolaTeslaa",  
+    "verification": "https://www.youtube.com/watch?v=kekeYdQlFgE", 
+    "percentToQualify": 100, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "ThanhBinhGD",
+            "link": "https://www.youtube.com/watch?v=dtQBtjq9he8", 
+            "percent": 100, 
+            "hz": 120 
+        }
+    ]
+}
