@@ -1,0 +1,17 @@
+{
+    "id": "70406732",
+    "name": "Anahita",
+    "creators": ["MadisonYuko"],
+    "verifier": "ThanhBinhGD",  
+    "verification": "https://www.youtube.com/watch?v=hY9vQd3vyBA", 
+    "percentToQualify": 63, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=JUCzC3k63-0", 
+            "percent": 100, 
+            "hz": 240 
+        }
+    ]
+}
