@@ -1,0 +1,53 @@
+{
+    "id": "87425029",
+    "name": "niwa",
+    "creators": ["Teno"],
+    "verifier": "thanhbinhGD",  
+    "verification": "https://youtu.be/Ww5apNGbWq4?si=1_3-fYrTWgkc8SAj", 
+    "percentToQualify": 61, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "2mbbl",
+            "link": "https://youtu.be/hHtCje15yIo", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=x5W46W63sFY", 
+            "percent": 100, 
+            "hz": 240 
+        },
+        {
+            "user": "zanora2003",
+            "link": "https://www.youtube.com/", 
+            "percent": 100, 
+            "hz": 0 
+        },
+        {
+            "user": "JunhaHoangGD",
+            "link": "https://www.youtube.com/watch?v=Nvei90f9BuU", 
+            "percent": 100, 
+            "hz": 120 
+        },
+        {
+            "user": "Eggie",
+            "link": "https://www.youtube.com/", 
+            "percent": 100, 
+            "hz": 0 
+        },
+        {
+            "user": "EasterGD",
+            "link": "https://www.youtube.com/", 
+            "percent": 93, 
+            "hz": 0 
+        },
+        {
+            "user": "Icecaved02",
+            "link": "https://www.youtube.com/", 
+            "percent": 85, 
+            "hz": 0 
+        }
+    ]
+}
