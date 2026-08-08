@@ -1,5 +1,4 @@
-
-import { round, score } from './score.js';
+import { round, score, recordScore, progressScore } from './score.js';
  
 /**
  * Path to directory containing `_list.json` and all levels
@@ -76,6 +75,8 @@ export async function fetchLeaderboard() {
         });
  
         // Records
+        const baseRating = score(rank + 1, 100, level.percentToQualify);
+        let completedPosition = 0;
         level.records.forEach((record) => {
             // Skip the verifier's own 100% record, since it's already
             // counted above in the "Verified" section. Without this,
@@ -97,10 +98,11 @@ export async function fetchLeaderboard() {
             };
             const { completed, progressed } = scoreMap[user];
             if (record.percent === 100) {
+                completedPosition += 1;
                 completed.push({
                     rank: rank + 1,
                     level: level.name,
-                    score: score(rank + 1, 100, level.percentToQualify),
+                    score: recordScore(baseRating, completedPosition),
                     link: record.link,
                 });
                 return;
@@ -114,6 +116,25 @@ export async function fetchLeaderboard() {
                 link: record.link,
             });
         });
+    });
+ 
+    // Second pass: tier each user's progress record scores based on how
+    // many 100% completions they have, and where each progress record
+    // ranks among their own progress records (highest score first).
+    Object.values(scoreMap).forEach((scores) => {
+        const { verified, completed, progressed } = scores;
+        const totalCompletions = verified.length + completed.length;
+        const has15Completions = totalCompletions >= 15;
+ 
+        progressed
+            .sort((a, b) => b.score - a.score)
+            .forEach((record, index) => {
+                record.score = progressScore(
+                    record.score,
+                    index + 1,
+                    has15Completions,
+                );
+            });
     });
  
     // Wrap in extra Object containing the user and total score
