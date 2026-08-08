@@ -21,17 +21,17 @@
     },
     {
         "role": "helper",
-        "name": "> MODERATOR",
+        "name": "> MODERATOR <",
         "link": "#"
     },
     {
         "role": "trial",
-        "name": "> HELPER",
+        "name": "> HELPER <",
         "link": "#"
     },
     {
         "role": "dev",
-        "name": "> TESTER",
+        "name": "> TESTER <",
         "link": "#"
     }
 ]
