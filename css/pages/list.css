@@ -143,3 +143,26 @@
 .page-list .meta .editors li a:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 860px) {
+    .page-list .list-container,
+    .page-list .level-container,
+    .page-list .meta-container {
+        padding-inline: 1rem;
+        padding-block: 1.5rem;
+    }
+    .page-list .meta-container {
+        padding-right: 1rem;
+    }
+    .page-list .level-container .level {
+        padding-right: 0;
+        max-width: 100%;
+    }
+    .page-list .level-container .level .stats {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+    .page-list .level-container .level .records {
+        table-layout: auto;
+    }
+}
