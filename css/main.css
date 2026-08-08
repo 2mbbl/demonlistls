@@ -60,14 +60,14 @@ header {
     }
 }
 header .logo {
-    justify-self: end;
+    justify-self: start;
     align-self: center;
     display: flex;
-    align-items: flex-end;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.75rem;
 }
 header .logo .logo__img {
-    height: 3.25rem;
+    height: 2.5rem;
     width: auto;
 }
 header .nav {
