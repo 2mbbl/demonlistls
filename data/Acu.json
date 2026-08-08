@@ -1,0 +1,65 @@
+{
+    "id": "61079355",
+    "name": "Acu",
+    "creators": ["neigefeu"],
+    "verifier": "Gileter247",  
+    "verification": "https://www.youtube.com/watch?v=BWHsRqx_7lg", 
+    "percentToQualify": 67, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "ThanhBinhGD",
+            "link": "https://www.youtube.com/watch?v=ESAEO2l-vl4", 
+            "percent": 100, 
+            "hz": 120
+        },
+        {
+            "user": "2mbbl",
+            "link": "https://www.youtube.com/watch?v=RgQz6zTJH74",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=0x-Mq3z6SZU",
+            "percent": 100,
+            "hz": 240
+        },
+        {
+            "user": "Ly May",
+            "link": "https://www.youtube.com/watch?v=wXTwZVNZYA4",
+            "percent": 100
+            "hz": 60
+        },
+        {
+            "user": "EasterGD",
+            "link": "https://www.youtube.com/watch?v=Asw7Ii07ZFY",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "Eggie",
+            "link": "https://www.youtube.com/watch?v=WybUa59fqHc",
+            "percent": 100,
+            "hz": 120
+        },
+        {
+            "user": "JunhaHoangGD",
+            "link": "https://www.youtube.com/watch?v=cjvsqGr58Wo",
+            "percent": 100
+            "hz": 180
+        },
+        {
+            "user": "0bruh",
+            "link": "https://www.youtube.com/watch?v=taCeHpRo8J8",
+            "percent": 89,
+            "hz": 0
+        },
+        {
+            "user": "Mio Takamiya",
+            "link": "#",
+            "percent": 71, 
+            "hz": 120
+        }
+    ]
+}
