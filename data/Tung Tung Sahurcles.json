@@ -1,0 +1,17 @@
+{
+    "id": "146066774",
+    "name": "Tung Tung Sahurcles",
+    "creators": ["Arraegen"],
+    "verifier": "ThanhBinhGD",  
+    "verification": "https://www.youtube.com/watch?v=5uaIwecGVSc", 
+    "percentToQualify": 78, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=abqStvozdMg", 
+            "percent": 100, 
+            "hz": 144 
+        }
+    ]
+}
