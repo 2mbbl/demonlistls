@@ -18,6 +18,12 @@
             "link": "#", 
             "percent": 100, 
             "hz": 0 
+        },
+        {
+            "user": "JunhaHoangGD",
+            "link": "https://www.youtube.com/watch?v=6jG_mQc67m0",
+            "percent": 100,
+            "hz": 120
         }
     ]
 }
