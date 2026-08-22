@@ -6,5 +6,11 @@
     "verification": "https://www.youtube.com/watch?si=KGPgW_ehx8V7rC77&v=jzH6qsdG5xY&feature=youtu.be", 
     "percentToQualify": 74, 
     "password": "IDK", 
-    "records": []
+    "records": [
+        {
+            "user": "ztubi",
+            "link": "https://www.youtube.com/watch?v=I7pSyuO6x3Q", 
+            "percent": 100, 
+            "hz": 60
+    ]
 }
