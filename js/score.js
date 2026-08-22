@@ -24,7 +24,7 @@ const scale = 3;
  *   MAX_RANK         rank cuối cùng còn được tính điểm
  */
 const MAX_SCORE = 500;
-const TOP_ZONE_END = 15;
+const TOP_ZONE_END = 50;
 const PLATEAU_START = 150;
 const PLATEAU_END = 90;
 const BOTTOM_ZONE_START = 150;
