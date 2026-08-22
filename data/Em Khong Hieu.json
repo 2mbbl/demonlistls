@@ -1,0 +1,47 @@
+{
+    "id": "74054225",
+    "name": "Em Khong Hieu",
+    "creators": ["Atimistic"],
+    "verifier": "NeekolaTeslaa",  
+    "verification": "https://www.youtube.com/watch?v=cBbglU5qBQk", 
+    "percentToQualify": 100, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "2mbbl",
+            "link": "https://www.youtube.com/watch?v=yqQ7zCvCipE", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "ztubi",
+            "link": "https://www.youtube.com/watch?v=YWMGA9Htsh8", 
+            "percent": 100, 
+            "hz": 240 
+        },
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=q6YSRzk1izo", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "EasterGD",
+            "link": "#", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "HoshinoLSGD",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "JunhaHoangGD",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 60 
+        }
+    ]
+}
