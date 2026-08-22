@@ -1,0 +1,47 @@
+{
+    "id": "83431859",
+    "name": "My Song",
+    "creators": ["lGenoxide"],
+    "verifier": "Ly May",  
+    "verification": "https://www.youtube.com/watch?v=2ii_ZKKGD1M", 
+    "percentToQualify": 100, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "Mio Takamiya",
+            "link": "https://www.youtube.com/watch?v=HWw6b65Qghs", 
+            "percent": 100, 
+            "hz": 120 
+        },
+        {
+            "user": "2mbbl",
+            "link": "#", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "JunhaHoangGD",
+            "link": "#", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "ztubi",
+            "link": "#", 
+            "percent": 100, 
+            "hz": 0 
+        },
+        {
+            "user": "HoshinoLSGD",
+            "link": "#", 
+            "percent": 100, 
+            "hz": 0 
+        },
+        {
+            "user": "thoGMD",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 0 
+        }
+    ]
+}
