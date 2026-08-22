@@ -1,0 +1,17 @@
+{
+    "id": "92894241",
+    "name": "Atmosphere",
+    "creators": ["Panya0208", "and more"],
+    "verifier": "2mbbl",  
+    "verification": "https://www.youtube.com/watch?v=64S75i_7la8&t=5s", 
+    "percentToQualify": 100, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thoGMD",
+            "link": "https://youtu.be/3Z7jH9jM6K4?si=TZPXGZiCu4lnlfvp", 
+            "percent": 100, 
+            "hz": 120 
+        }
+    ]
+}
