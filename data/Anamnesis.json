@@ -1,0 +1,17 @@
+{
+    "id": "105818208",
+    "name": "Anamnesis",
+    "creators": ["TheDolb1natoR"],
+    "verifier": "2mbbl",  
+    "verification": "https://youtu.be/9530lJ3i3r0", 
+    "percentToQualify": 100, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "Datipu",
+            "link": "https://www.youtube.com/watch?v=DHiBLvv_7J8", 
+            "percent": 100, 
+            "hz": 144 
+        }
+    ]
+}
