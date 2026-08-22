@@ -10,21 +10,81 @@ const scale = 3;
  * @param {Number} minPercent Minimum percentage required
  * @returns {Number}
  */
+/**
+ * Boomerang curve tuning constants.
+ * Shape: dốc xuống nhanh ở đầu (top ranks) -> gần như phẳng ở giữa
+ * (điểm giữa các rank không quá chênh nhau) -> dốc xuống nhanh ở cuối.
+ *
+ *   MAX_SCORE        điểm của rank #1
+ *   TOP_ZONE_END     rank cuối cùng của "vùng dốc đầu" (rank 1..TOP_ZONE_END)
+ *   PLATEAU_START    điểm ở đầu vùng phẳng (rank = TOP_ZONE_END)
+ *   PLATEAU_END      điểm ở cuối vùng phẳng (rank = BOTTOM_ZONE_START)
+ *   BOTTOM_ZONE_START rank đầu tiên của "vùng dốc cuối"
+ *   MIN_SCORE        điểm ở rank cuối cùng (175)
+ *   MAX_RANK         rank cuối cùng còn được tính điểm
+ */
+const MAX_SCORE = 500;
+const TOP_ZONE_END = 15;
+const PLATEAU_START = 150;
+const PLATEAU_END = 90;
+const BOTTOM_ZONE_START = 150;
+const MIN_SCORE = 5;
+const MAX_RANK = 175;
+
+/**
+ * Nội suy mượt (ease-in-out) từ 0 -> 1, dốc ở hai đầu, phẳng ở giữa
+ * khi dùng lồng vào 3 vùng bên dưới.
+ */
+function smoothstep(t) {
+    t = Math.min(1, Math.max(0, t));
+    return t * t * (3 - 2 * t);
+}
+
+/**
+ * Điểm gốc (100%) theo rank, dạng đường cong "boomerang":
+ * dốc - phẳng (điểm không quá chênh) - dốc.
+ * @param {Number} rank
+ * @returns {Number}
+ */
+function rankScore(rank) {
+    if (rank <= 1) {
+        return MAX_SCORE;
+    }
+    if (rank <= TOP_ZONE_END) {
+        // Vùng dốc đầu: MAX_SCORE -> PLATEAU_START
+        let t = (rank - 1) / (TOP_ZONE_END - 1);
+        return MAX_SCORE - (MAX_SCORE - PLATEAU_START) * smoothstep(t);
+    }
+    if (rank <= BOTTOM_ZONE_START) {
+        // Vùng phẳng ở giữa: giảm nhẹ, đều, không quá chênh nhau
+        let t = (rank - TOP_ZONE_END) / (BOTTOM_ZONE_START - TOP_ZONE_END);
+        return PLATEAU_START - (PLATEAU_START - PLATEAU_END) * t;
+    }
+    // Vùng dốc cuối: PLATEAU_END -> MIN_SCORE
+    let t = (rank - BOTTOM_ZONE_START) / (MAX_RANK - BOTTOM_ZONE_START);
+    return PLATEAU_END - (PLATEAU_END - MIN_SCORE) * smoothstep(t);
+}
+
 export function score(rank, percent, minPercent) {
-    if (rank > 175) {
+    if (rank > MAX_RANK) {
         return 0;
     }
-    if (rank > 175 && percent < 100) {
+    if (rank > MAX_RANK && percent < 100) {
         return 0;
     }
  
-    // Old formula
+    // Old formula (sqrt, giảm dần đều)
     /*
     let score = (100 / Math.sqrt((rank - 1) / 50 + 0.444444) - 50) *
         ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
     */
-    // New formula
+    // Old "new formula" (sqrt tuyến tính hơn)
+    /*
     let score = (-22.543*Math.pow(rank-1, 0.5) + 500) *
+        ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
+    */
+    // Boomerang formula: cao - trung bình (không quá chênh) - thấp
+    let score = rankScore(rank) *
         ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
  
     score = Math.max(0, score);
