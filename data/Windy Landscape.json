@@ -1,0 +1,23 @@
+{
+    "id": "4957691",
+    "name": "Windy Landscape",
+    "creators": ["WOOGI1411"],
+    "verifier": "ztubi",  
+    "verification": "https://www.youtube.com/watch?v=eOcu0uPVzLY", 
+    "percentToQualify": 100, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "thoGMD",
+            "link": "https://www.youtube.com/watch?v=DxWVl9Mc3xU", 
+            "percent": 100, 
+            "hz": 240 
+        },
+        {
+            "user": "JunhaHoangGD",
+            "link: "#",
+            "percent": 100
+            "hz": 0
+        }
+    ]
+}
