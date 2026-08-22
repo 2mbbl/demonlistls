@@ -1,0 +1,17 @@
+{
+    "id": "60619762",
+    "name": "Denouement",
+    "creators": ["Synactive GD"],
+    "verifier": "NeekolaTeslaa",  
+    "verification": "https://youtu.be/pPWADmG66iA?si=2sZ_99KGaxJx0__t", 
+    "percentToQualify": 100, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "ztubi",
+            "link": "https://www.youtube.com/watch?v=qVfLPLL5UmE", 
+            "percent": 100, 
+            "hz": 60 
+        }
+    ]
+}
