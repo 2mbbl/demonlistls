@@ -1,0 +1,23 @@
+{
+    "id": "79075904",
+    "name": "Lmao",
+    "creators": ["MazZedy"],
+    "verifier": "2mbbl",  
+    "verification": "https://www.youtube.com/watch?v=nXQI_nHt6lo", 
+    "percentToQualify": 100, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "EasterGD",
+            "link": "https://www.youtube.com/watch?v=Ya22SVm2HKQ", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "Banggmd",
+            "link": "https://www.youtube.com/watch?v=cIFoqZgvb90", 
+            "percent": 100, 
+            "hz": 144 
+        }
+    ]
+}
