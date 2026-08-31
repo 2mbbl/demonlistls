@@ -76,12 +76,12 @@ export function recordScore(baseRating, position) {
             percent = 0.01;
             break;
         case position <= 25:
-            // Positions 16-25 always award at least 5.1 points
-            return round(5.1);
+            // Positions 16-25 always award at least 5 points
+            return round(5);
         default:
             return round(1);
     }
-    // Positions 1-15 also never fall below 5.1 points
+    // Positions 1-15 also never fall below 5 points
     return Math.max(round(baseRating * percent), 5);
 }
 
