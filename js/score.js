@@ -29,20 +29,11 @@ export function score(rank, percent, minPercent) {
  
     score = Math.max(0, score);
  
-    let finalScore;
     if (percent != 100) {
-        finalScore = round(score - score / 3);
-    } else {
-        finalScore = Math.max(round(score), 0);
+        return round(score - score / 3);
     }
  
-    // Top 1-25 levels must always award at least 5.1 points
-    // (only applies once the record actually qualifies for points)
-    if (rank <= 25 && finalScore > 0) {
-        finalScore = Math.max(finalScore, 5.1);
-    }
- 
-    return finalScore;
+    return Math.max(round(score), 0);
 }
 
 /**
@@ -85,11 +76,13 @@ export function recordScore(baseRating, position) {
             percent = 0.01;
             break;
         case position <= 25:
-            return round(5);
+            // Positions 16-25 always award at least 5.1 points
+            return round(5.1);
         default:
             return round(1);
     }
-    return round(baseRating * percent);
+    // Positions 1-15 also never fall below 5.1 points
+    return Math.max(round(baseRating * percent), 5);
 }
 
 /**
