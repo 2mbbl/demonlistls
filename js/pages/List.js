@@ -124,9 +124,6 @@ export default {
                         Từ top 176 trở đi sẽ không được cộng điểm
                     </p>
                     <p>
-                        Có thể sử dụng link xác nhận hoàn thành trong GDListHub (GDVN), ví dụ: https://www.gdlisthub.dev/vi/record/8fd1509d-fc0b-4771-8f66-0808d009af47/119829177?id=3142
-                    </p>
-                    <p>
                         Hard/Insane Demon chỉ 100% mới được chấp nhận, còn Extreme Demon sẽ có % cụ thể để được cộng điểm
                     </p>
                 </div>
