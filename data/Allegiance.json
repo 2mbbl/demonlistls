@@ -7,5 +7,10 @@
     "percentToQualify": 67, 
     "password": "IDK", 
     "records": [
+        {
+            "user": "thoGMD"
+            "link": "https://www.youtube.com/watch?v=hdUIPxtKluU", 
+            "percent": 100, 
+            "hz": 0
     ]
 }
