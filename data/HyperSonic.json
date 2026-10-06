@@ -12,6 +12,12 @@
             "link": "https://www.youtube.com/watch?v=FDYBKrQlqp0&t=6s", 
             "percent": 100, 
             "hz": 120 
+        },
+        {
+            "user": "Eggie",
+            "link": "https://www.youtube.com/shorts/pIjTM8JoTdk", 
+            "percent": 100, 
+            "hz": 120 
         }
     ]
 }
