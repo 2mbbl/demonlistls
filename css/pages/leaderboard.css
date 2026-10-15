@@ -30,6 +30,24 @@
 .page-leaderboard .board-container {
     padding-inline: 1rem;
 }
+.page-leaderboard .board-search {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+}
+.page-leaderboard .board-search::placeholder {
+    color: var(--color-on-background);
+    opacity: 0.6;
+}
+.page-leaderboard .board-empty {
+    padding: 1rem;
+    opacity: 0.6;
+}
 .page-leaderboard .board {
     table-layout: auto;
     display: block;
