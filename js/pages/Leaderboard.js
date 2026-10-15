@@ -12,6 +12,7 @@ export default {
         loading: true,
         selected: 0,
         err: [],
+        search: '',
     }),
     template: `
         <main v-if="loading">
@@ -25,8 +26,17 @@ export default {
                     </p>
                 </div>
                 <div class="board-container">
+                    <input
+                        type="text"
+                        class="board-search"
+                        v-model="search"
+                        placeholder="Tìm player..."
+                    >
+                    <p class="board-empty" v-if="filteredLeaderboard.length === 0">
+                        Không tìm thấy player nào.
+                    </p>
                     <table class="board">
-                        <tr v-for="(ientry, i) in leaderboard">
+                        <tr v-for="{ ientry, i } in filteredLeaderboard" :key="i">
                             <td class="rank">
                                 <p class="type-label-lg">#{{ i + 1 }}</p>
                             </td>
@@ -95,6 +105,13 @@ export default {
     computed: {
         entry() {
             return this.leaderboard[this.selected];
+        },
+        // Giữ nguyên thứ hạng thật (i) của player khi lọc
+        filteredLeaderboard() {
+            const q = this.search.trim().toLowerCase();
+            return this.leaderboard
+                .map((ientry, i) => ({ ientry, i }))
+                .filter(({ ientry }) => ientry.user.toLowerCase().includes(q));
         },
     },
     async mounted() {
