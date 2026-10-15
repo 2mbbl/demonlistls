@@ -126,6 +126,9 @@ export default {
                     <p>
                         Hard/Insane Demon chỉ 100% mới được chấp nhận, còn Extreme Demon sẽ có % cụ thể để được cộng điểm
                     </p>
+                    <p>
+                        Bất kì Extreme Demon nào đạt được trên hoặc bằng 50% đều CÓ THỂ được ghi vào List
+                    </p>
                 </div>
             </div>
         </main>
