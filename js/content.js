@@ -125,7 +125,8 @@ export async function fetchLeaderboard() {
         [...verified, ...completed]
             .sort((a, b) => b.score - a.score)
             .forEach((record, index) => {
-                record.score = recordScore(record.score, index + 1);
+                record.score =
+                    record.rank > 175 ? 0 : recordScore(record.score, index + 1);
             });
     });
  
@@ -140,11 +141,14 @@ export async function fetchLeaderboard() {
         progressed
             .sort((a, b) => b.score - a.score)
             .forEach((record, index) => {
-                record.score = progressScore(
-                    record.score,
-                    index + 1,
-                    has15Completions,
-                );
+                record.score =
+                    record.rank > 175
+                        ? 0
+                        : progressScore(
+                              record.score,
+                              index + 1,
+                              has15Completions,
+                          );
             });
     });
  
