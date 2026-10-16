@@ -1,29 +1,28 @@
 import { round, score, recordScore, progressScore } from './score.js';
  
 /**
- * Path to the directory containing the list files, `_editors.json` and all levels
+ * Path to the directory containing `_editors.json` and the main list
  */
 const dir = '/data';
 
 /**
- * Name of the file listing the levels (in order) of each list. All level
- * files live in the same `dir`, so a level file name must be unique.
- * - main:   `_list.json`           -> the regular list
- * - mobile: `_list_mobile.json`    -> the mobile list (own levels/records)
+ * Directory containing `_list.json` and all levels of each list.
+ * - main:   /data         -> the regular list
+ * - mobile: /data/mobile  -> the mobile list (own levels/records)
  */
-const listFiles = {
-    main: '_list',
-    mobile: '_list_mobile',
+const listDirs = {
+    main: dir,
+    mobile: `${dir}/mobile`,
 };
 
 export async function fetchList(mode = 'main') {
-    const listFile = listFiles[mode] ?? listFiles.main;
+    const base = listDirs[mode] ?? listDirs.main;
     try {
-        const listResult = await fetch(`${dir}/${listFile}.json`);
+        const listResult = await fetch(`${base}/_list.json`);
         const list = await listResult.json();
         return await Promise.all(
             list.map(async (path, rank) => {
-                const levelResult = await fetch(`${dir}/${path}.json`);
+                const levelResult = await fetch(`${base}/${path}.json`);
                 try {
                     const level = await levelResult.json();
                     return [
