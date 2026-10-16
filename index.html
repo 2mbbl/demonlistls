@@ -83,9 +83,6 @@
                 </div>
             </nav>
         </header>
-        <router-view
-            :key="$route.path"
-            :class="{ dark: store.dark }"
-        ></router-view>
+        <router-view :class="{ dark: store.dark }"></router-view>
     </body>
 </html>
