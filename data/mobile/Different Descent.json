@@ -1,0 +1,23 @@
+{
+    "id": "coming",
+    "name": "Different Descent",
+    "creators": ["coming"],
+    "verifier": "HoshinoLSGD",  
+    "verification": "LinkYT", 
+    "percentToQualify": 85, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "Mio Takamiya",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 120 
+        },
+        {
+            "user": "JunhaHoangGD",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 60 
+        }
+    ]
+}
