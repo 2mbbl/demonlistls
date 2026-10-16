@@ -7,6 +7,8 @@
     border-bottom: 4px solid transparent;
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     padding-inline: 0.5rem;
     transition: border-color 100ms ease;
 }
