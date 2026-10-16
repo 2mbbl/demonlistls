@@ -1,0 +1,29 @@
+{
+    "id": "coming",
+    "name": "Absolute Zero",
+    "creators": ["coming"],
+    "verifier": "2mbbl",  
+    "verification": "https://www.youtube.com/watch?v=gLlwslqKvQc", 
+    "percentToQualify": 85, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "ztubi",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 90 
+        },
+        {
+            "user": "Mio Takamiya",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 120 
+        },
+        {
+            "user": "JunhaHoangGD",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 60 
+        }
+    ]
+}
