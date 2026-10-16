@@ -1,0 +1,12 @@
+{
+    "id": "coming",
+    "name": "Pay",
+    "creators": ["coming"],
+    "verifier": "2mbbl",  
+    "verification": "LinkYT", 
+    "percentToQualify": 85, 
+    "password": "IDK", 
+    "records": [
+        
+    ]
+}
