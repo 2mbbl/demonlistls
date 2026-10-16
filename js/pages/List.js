@@ -16,6 +16,13 @@ const roleIconMap = {
  
 export default {
     components: { Spinner, LevelAuthors },
+    props: {
+        // 'main' = List, 'mobile' = Mobile List
+        mode: {
+            type: String,
+            default: 'main',
+        },
+    },
     template: `
         <main v-if="loading">
             <Spinner></Spinner>
@@ -28,6 +35,9 @@ export default {
                     v-model="search"
                     placeholder="Tìm level..."
                 >
+                <p class="list-empty" v-if="list && list.length === 0">
+                    Chưa có level nào trong {{ mode === 'mobile' ? 'Mobile List' : 'List' }}.
+                </p>
                 <table class="list" v-if="list">
                     <tr
                         v-for="([level, err], i) in list"
@@ -146,9 +156,12 @@ export default {
     }),
     computed: {
         level() {
-            return this.list[this.selected][0];
+            return this.list?.[this.selected]?.[0] ?? null;
         },
         video() {
+            if (!this.level) {
+                return "";
+            }
             if (!this.level.showcase) {
                 return embed(this.level.verification);
             }
@@ -162,7 +175,7 @@ export default {
     },
     async mounted() {
         // Hide loading spinner
-        this.list = await fetchList();
+        this.list = await fetchList(this.mode);
         this.editors = await fetchEditors();
  
         // Error handling
