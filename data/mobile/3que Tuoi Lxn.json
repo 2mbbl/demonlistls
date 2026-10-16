@@ -1,0 +1,17 @@
+{
+    "id": "Coming",
+    "name": "3que Tuoi Lxn",
+    "creators": ["Coming"],
+    "verifier": "Banggmd",  
+    "verification": "https://www.youtube.com/watch?v=h3dYwrnJkoY", 
+    "percentToQualify": 85, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "JunhaHoangGD",
+            "link": "https://www.youtube.com/watch?v=hFl9lNmt-A8", 
+            "percent": 100, 
+            "hz": 60 
+        }
+    ]
+}
