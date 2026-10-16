@@ -54,3 +54,21 @@
 .nav .nav__actions .nav__cta:hover:not(:active) {
     transform: translateY(-2px);
 }
+
+/* Màn hình hẹp: thu gọn khoảng cách để 5 tab + nút không bị tràn ngang */
+@media screen and (max-width: 1100px) {
+    .nav {
+        column-gap: 0.25rem;
+    }
+    .nav .nav__tab {
+        padding-inline: 0.25rem;
+    }
+    .nav .nav__actions .nav__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    .nav .nav__actions .nav__cta {
+        margin-left: 0.5rem;
+        padding: 0.75rem;
+    }
+}
