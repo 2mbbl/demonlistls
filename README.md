@@ -18,6 +18,19 @@ The website isn't loading! What can I do?
 
 ---
 
+### Mobile List
+
+The **Mobile List** and **Mobile Leaderboard** tabs work exactly like List and
+Leaderboard, but use their own levels and records, stored in `data/mobile/`:
+
+- `data/mobile/_list.json` - ordered list of the mobile levels (top to bottom).
+- `data/mobile/<Level>.json` - one file per level, same format as the main list
+  (see `data/mobile/mau_level.json` for a template).
+- The Mobile Leaderboard is calculated only from the files in `data/mobile/`.
+- The staff list (`data/_editors.json`) is shared with the main list.
+
+---
+
 ### Usage FAQ
 
 How do I add levels to the list?
