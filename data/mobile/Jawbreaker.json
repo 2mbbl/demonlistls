@@ -1,0 +1,23 @@
+{
+    "id": "coming",
+    "name": "Jawbreaker",
+    "creators": ["coming"],
+    "verifier": "Mio Takamiya",  
+    "verification": "LinkYT", 
+    "percentToQualify": 85, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "JunhaHoangGD",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "Zxvhn",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 0 
+        }
+    ]
+}
