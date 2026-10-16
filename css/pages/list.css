@@ -24,6 +24,11 @@
     padding-right: 2rem;
 }
 
+.page-list .list-empty {
+    padding: 1rem;
+    opacity: 0.6;
+}
+
 .page-list .list {
     table-layout: auto;
 }
