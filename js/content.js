@@ -1,17 +1,32 @@
 import { round, score, recordScore, progressScore } from './score.js';
  
 /**
- * Path to directory containing `_list.json` and all levels
+ * Path to the directory containing `_editors.json` (shared by every list)
  */
 const dir = '/data';
- 
-export async function fetchList() {
-    const listResult = await fetch(`${dir}/_list.json`);
+
+/**
+ * Directories containing `_list.json` and all levels of each list.
+ * - main:   the regular list
+ * - mobile: the mobile list (own levels, own records, own leaderboard)
+ */
+const listDirs = {
+    main: dir,
+    mobile: `${dir}/mobile`,
+};
+
+function listDir(mode) {
+    return listDirs[mode] ?? listDirs.main;
+}
+
+export async function fetchList(mode = 'main') {
+    const base = listDir(mode);
     try {
+        const listResult = await fetch(`${base}/_list.json`);
         const list = await listResult.json();
         return await Promise.all(
             list.map(async (path, rank) => {
-                const levelResult = await fetch(`${dir}/${path}.json`);
+                const levelResult = await fetch(`${base}/${path}.json`);
                 try {
                     const level = await levelResult.json();
                     return [
@@ -46,8 +61,11 @@ export async function fetchEditors() {
     }
 }
  
-export async function fetchLeaderboard() {
-    const list = await fetchList();
+export async function fetchLeaderboard(mode = 'main') {
+    const list = await fetchList(mode);
+    if (!list) {
+        return [[], ['_list']];
+    }
  
     const scoreMap = {};
     const errs = [];
