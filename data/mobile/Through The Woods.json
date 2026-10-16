@@ -1,0 +1,17 @@
+{
+    "id": "coming",
+    "name": "Through The Woods",
+    "creators": ["coming"],
+    "verifier": "2mbbl",  
+    "verification": "LinkYT", 
+    "percentToQualify": 90, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "HoshinoLSGD",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 60 
+        }
+    ]
+}
