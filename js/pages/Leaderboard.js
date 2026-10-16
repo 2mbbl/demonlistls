@@ -7,6 +7,13 @@ export default {
     components: {
         Spinner,
     },
+    props: {
+        // 'main' = Leaderboard, 'mobile' = Mobile Leaderboard
+        mode: {
+            type: String,
+            default: 'main',
+        },
+    },
     data: () => ({
         leaderboard: [],
         loading: true,
@@ -32,7 +39,10 @@ export default {
                         v-model="search"
                         placeholder="Tìm player..."
                     >
-                    <p class="board-empty" v-if="filteredLeaderboard.length === 0">
+                    <p class="board-empty" v-if="leaderboard.length === 0">
+                        Chưa có player nào trong {{ mode === 'mobile' ? 'Mobile Leaderboard' : 'Leaderboard' }}.
+                    </p>
+                    <p class="board-empty" v-else-if="filteredLeaderboard.length === 0">
                         Không tìm thấy player nào.
                     </p>
                     <table class="board">
@@ -52,7 +62,7 @@ export default {
                     </table>
                 </div>
                 <div class="player-container">
-                    <div class="player">
+                    <div class="player" v-if="entry">
                         <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
                         <h3>{{ localize(entry.total) }}</h3>
                         <h2 v-if="entry.verified.length > 0">Verifier/First Victor ({{ entry.verified.length}})</h2>
@@ -115,7 +125,7 @@ export default {
         },
     },
     async mounted() {
-        const [leaderboard, err] = await fetchLeaderboard();
+        const [leaderboard, err] = await fetchLeaderboard(this.mode);
         this.leaderboard = leaderboard;
         this.err = err;
         // Hide loading spinner
