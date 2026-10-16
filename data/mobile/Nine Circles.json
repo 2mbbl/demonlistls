@@ -1,0 +1,23 @@
+{
+    "id": "coming",
+    "name": "Nine Circles",
+    "creators": ["coming"],
+    "verifier": "Datipu",  
+    "verification": "LinkYT", 
+    "percentToQualify": 85, 
+    "password": "IDK", 
+    "records": [
+        {
+            "user": "JunhaHoangGD",
+            "link": "https://www.youtube.com/watch?v=KZdbImWAzR8", 
+            "percent": 100, 
+            "hz": 60 
+        },
+        {
+            "user": "Teyvex",
+            "link": "LinkYT", 
+            "percent": 100, 
+            "hz": 0 
+        }
+    ]
+}
