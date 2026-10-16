@@ -1,150 +1,137 @@
-.page-list .list-container,
-.page-list .level-container,
-.page-list .meta-container {
-    padding-block: 2rem;
-}
-.page-list .list-container {
-    padding-inline: 1rem;
-}
-.page-list .list-search {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    border: none;
-    background-color: var(--color-background);
-    color: var(--color-on-background);
-}
-.page-list .list-search::placeholder {
-    color: var(--color-on-background);
-    opacity: 0.6;
-}
-.page-list .meta-container {
-    padding-right: 2rem;
-}
+import { fetchLeaderboard } from '../content.js';
+import { localize } from '../util.js';
 
-.page-list .list-empty {
-    padding: 1rem;
-    opacity: 0.6;
-}
+import Spinner from '../components/Spinner.js';
 
-.page-list .list {
-    table-layout: auto;
-}
-.page-list .list .rank {
-    text-align: end;
-    padding-right: 1rem;
-}
-.page-list .list .level {
-    width: 100%;
-}
-.page-list .list .level button {
-    background-color: var(--color-background);
-    color: var(--color-on-background);
-    border: none;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    text-align: start;
-    word-break: normal;
-    overflow-wrap: anywhere;
-    cursor: pointer;
-}
-.page-list .list .level.error button {
-    color: var(--color-error);
-    cursor: not-allowed;
-    text-decoration: line-through;
-}
-.page-list .list .level button:hover {
-    background-color: var(--color-background-hover);
-    color: var(--color-on-background-hover);
-}
-.page-list .list .level.active button {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-}
-.page-list .level-container .level {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding-right: 2rem;
-    max-width: 48rem;
-}
-.page-list .level-container .level .level-authors {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-auto-rows: max-content;
-    gap: 1rem;
-}
-.page-list .level-container .level .video {
-    aspect-ratio: 16/9;
-}
-.page-list .level-container .level .stats {
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-    gap: 2rem;
-}
-.page-list .level-container .level .stats li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-.page-list .level-container .level .records {
-    table-layout: fixed;
-}
-.page-list .level-container .level .records tr td:not(:last-child) {
-    padding-right: 1rem;
-}
-.page-list .level-container .level .records .percent,
-.page-list .level-container .level .records .user,
-.page-list .level-container .level .records .hz {
-    padding-block: 1rem;
-}
-.page-list .level-container .level .records .user {
-    width: 100%;
-}
-.page-list .level-container .level .records .percent,
-.page-list .level-container .level .records .hz {
-    text-align: end;
-}
-.page-list .meta-container .og a:hover,
-.page-list .level-container .level .records a:hover {
-    text-decoration: underline;
-}
-.page-list .meta {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.page-list .meta .errors {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.page-list .meta .errors .error {
-    padding: 1rem;
-    background-color: var(--color-error);
-    color: var(--color-on-error);
-    border-radius: 0.5rem;
-}
-.page-list .meta .editors {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-.page-list .meta .editors li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.page-list .meta .editors li img {
-    height: 1.25rem;
-}
-.page-list .meta .editors li.group-start {
-    margin-top: 1.25rem;
-}
-.page-list .meta .editors li a:hover {
-    text-decoration: underline;
-}
+export default {
+    components: {
+        Spinner,
+    },
+    props: {
+        // 'main' = Leaderboard, 'mobile' = Mobile Leaderboard
+        mode: {
+            type: String,
+            default: 'main',
+        },
+    },
+    data: () => ({
+        leaderboard: [],
+        loading: true,
+        selected: 0,
+        err: [],
+        search: '',
+    }),
+    template: `
+        <main v-if="loading">
+            <Spinner></Spinner>
+        </main>
+        <main v-else class="page-leaderboard-container">
+            <div class="page-leaderboard">
+                <div class="error-container">
+                    <p class="error" v-if="err.length > 0">
+                        Leaderboard may be incorrect, as the following levels could not be loaded: {{ err.join(', ') }}
+                    </p>
+                </div>
+                <div class="board-container">
+                    <input
+                        type="text"
+                        class="board-search"
+                        v-model="search"
+                        placeholder="Tìm player..."
+                    >
+                    <p class="board-empty" v-if="leaderboard.length === 0">
+                        Chưa có player nào trong {{ mode === 'mobile' ? 'Mobile Leaderboard' : 'Leaderboard' }}.
+                    </p>
+                    <p class="board-empty" v-else-if="filteredLeaderboard.length === 0">
+                        Không tìm thấy player nào.
+                    </p>
+                    <table class="board">
+                        <tr v-for="{ ientry, i } in filteredLeaderboard" :key="i">
+                            <td class="rank">
+                                <p class="type-label-lg">#{{ i + 1 }}</p>
+                            </td>
+                            <td class="total">
+                                <p class="type-label-lg">{{ localize(ientry.total) }}</p>
+                            </td>
+                            <td class="user" :class="{ 'active': selected == i }">
+                                <button @click="selected = i">
+                                    <span class="type-label-lg">{{ ientry.user }}</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="player-container">
+                    <div class="player" v-if="entry">
+                        <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
+                        <h3>{{ localize(entry.total) }}</h3>
+                        <h2 v-if="entry.verified.length > 0">Verifier/First Victor ({{ entry.verified.length}})</h2>
+                        <table class="table">
+                            <tr v-for="score in entry.verified">
+                                <td class="rank">
+                                    <p>#{{ score.rank }}</p>
+                                </td>
+                                <td class="level">
+                                    <a class="type-label-lg" target="_blank" :href="score.link">{{ score.level }}</a>
+                                </td>
+                                <td class="score">
+                                    <p>+{{ localize(score.score) }}</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <h2 v-if="entry.completed.length > 0">Completed ({{ entry.completed.length }})</h2>
+                        <table class="table">
+                            <tr v-for="score in entry.completed">
+                                <td class="rank">
+                                    <p>#{{ score.rank }}</p>
+                                </td>
+                                <td class="level">
+                                    <a class="type-label-lg" target="_blank" :href="score.link">{{ score.level }}</a>
+                                </td>
+                                <td class="score">
+                                    <p>+{{ localize(score.score) }}</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <h2 v-if="entry.progressed.length > 0">Progressed ({{entry.progressed.length}})</h2>
+                        <table class="table">
+                            <tr v-for="score in entry.progressed">
+                                <td class="rank">
+                                    <p>#{{ score.rank }}</p>
+                                </td>
+                                <td class="level">
+                                    <a class="type-label-lg" target="_blank" :href="score.link">{{ score.percent }}% {{ score.level }}</a>
+                                </td>
+                                <td class="score">
+                                    <p>+{{ localize(score.score) }}</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    `,
+    computed: {
+        entry() {
+            return this.leaderboard[this.selected];
+        },
+        // Giữ nguyên thứ hạng thật (i) của player khi lọc
+        filteredLeaderboard() {
+            const q = this.search.trim().toLowerCase();
+            return this.leaderboard
+                .map((ientry, i) => ({ ientry, i }))
+                .filter(({ ientry }) => ientry.user.toLowerCase().includes(q));
+        },
+    },
+    async mounted() {
+        const [leaderboard, err] = await fetchLeaderboard(this.mode);
+        this.leaderboard = leaderboard;
+        this.err = err;
+        // Hide loading spinner
+        this.loading = false;
+    },
+    methods: {
+        localize,
+    },
+};
