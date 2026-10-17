@@ -7,6 +7,12 @@
     "percentToQualify": 75, 
     "password": "IDK", 
     "records": [
+        {
+            "user": "JunhaHoangGD",
+            "link": "https://www.youtube.com/watch?v=1we_uqOX98c",
+            "percent": 100,
+            "hz": 60
+        }
 
     ]
 }
