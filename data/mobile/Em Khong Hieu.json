@@ -24,6 +24,12 @@
             "link": "https://www.youtube.com/watch?v=vplb3wthQWM",
             "percent": 100,
             "hz": 60
+        },
+        {
+            "user": "Teyvex",
+            "link": "https://www.youtube.com/watch?v=awtH4B9lJrY",
+            "percent": 100,
+            "hz": 60
         }
     ]
 }
