@@ -12,6 +12,12 @@
             "link": "https://www.youtube.com/", 
             "percent": 57, 
             "hz": 0 
+        },
+        {
+            "user": "2mbbl",
+            "link": "https://www.youtube.com/watch?v=8E6z8_sdbuQ",
+            "percent": 100,
+            "hz": 60
         }
     ]
 }
