@@ -117,10 +117,8 @@ export default {
                             </li>
                         </ol>
                     </template>
-                    <h3>Submission Requirements</h3>
-                    <p>
-                        https://docs.google.com/document/d/12Nu5VhQmFTw0wOivpseR9MOdUqSCTxqkmpZclTF90Ik/edit?usp=sharing
-                    </p>
+                    <h3>QUY TẮC</h3>
+                    <a href="https://docs.google.com/document/d/12Nu5VhQmFTw0wOivpseR9MOdUqSCTxqkmpZclTF90Ik/edit?usp=sharing">Xem tại đây</a>
                 </div>
             </div>
         </main>
