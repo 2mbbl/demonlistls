@@ -40,22 +40,34 @@
                 <img src="/assets/logo.png" alt="GDLS Demonlist" class="logo__img" />
                 <div class="logo__text">
                     <h2>DLLS</h2>
-                    <span class="logo__badge">v1.0.2</span>
+                    <span class="logo__badge">v1.0.3</span>
                 </div>
             </div>
             <nav class="nav">
-                <router-link class="nav__tab" to="/">
-                    <span class="type-label-lg">List</span>
-                </router-link>
-                <router-link class="nav__tab" to="/leaderboard">
-                    <span class="type-label-lg">Leaderboard</span>
-                </router-link>
-                <router-link class="nav__tab" to="/mobile">
-                    <span class="type-label-lg">Mobile List</span>
-                </router-link>
-                <router-link class="nav__tab" to="/mobile-leaderboard">
-                    <span class="type-label-lg">Mobile Leaderboard</span>
-                </router-link>
+                <div
+                    class="nav__group"
+                    v-for="group in navGroups"
+                    :key="group.key"
+                    :class="{ open: store.openMenu === group.key, active: isGroupActive(group) }"
+                >
+                    <router-link class="nav__tab" :to="group.list">
+                        <span class="type-label-lg">{{ group.label }}</span>
+                    </router-link>
+                    <button
+                        class="nav__arrow"
+                        type="button"
+                        :aria-expanded="store.openMenu === group.key"
+                        :aria-label="'Leaderboard của ' + group.label"
+                        @click="store.toggleMenu(group.key)"
+                    >
+                        <span class="nav__chevron"></span>
+                    </button>
+                    <div class="nav__menu" v-show="store.openMenu === group.key">
+                        <router-link class="nav__menu-item" :to="group.board">
+                            <span class="type-label-lg">Leaderboard</span>
+                        </router-link>
+                    </div>
+                </div>
                 <router-link class="nav__tab" to="/roulette">
                     <span class="type-label-lg">Roulette</span>
                 </router-link>
