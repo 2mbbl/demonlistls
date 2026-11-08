@@ -8,7 +8,7 @@ export default {
         Spinner,
     },
     props: {
-        // 'main' = Leaderboard, 'mobile' = Mobile Leaderboard
+        // 'main' = Leaderboard, 'mobile' = Mobile Leaderboard, 'challenge' = Challenge Leaderboard
         mode: {
             type: String,
             default: 'main',
@@ -40,7 +40,7 @@ export default {
                         placeholder="Tìm player..."
                     >
                     <p class="board-empty" v-if="leaderboard.length === 0">
-                        Chưa có player nào trong {{ mode === 'mobile' ? 'Mobile Leaderboard' : 'Leaderboard' }}.
+                        Chưa có player nào trong {{ boardLabel }}.
                     </p>
                     <p class="board-empty" v-else-if="filteredLeaderboard.length === 0">
                         Không tìm thấy player nào.
@@ -113,6 +113,15 @@ export default {
         </main>
     `,
     computed: {
+        boardLabel() {
+            return (
+                {
+                    main: 'Leaderboard',
+                    mobile: 'Mobile Leaderboard',
+                    challenge: 'Challenge Leaderboard',
+                }[this.mode] ?? 'Leaderboard'
+            );
+        },
         entry() {
             return this.leaderboard[this.selected];
         },
