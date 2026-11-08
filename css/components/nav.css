@@ -63,6 +63,9 @@
     .nav .nav__tab {
         padding-inline: 0.25rem;
     }
+    .nav .nav__arrow {
+        width: 1.25rem;
+    }
     .nav .nav__actions .nav__icon {
         height: 2.5rem;
         width: 2.5rem;
@@ -71,4 +74,73 @@
         margin-left: 0.5rem;
         padding: 0.75rem;
     }
+}
+
+/* ===== Nhóm List + mũi tên mở Leaderboard ===== */
+.nav .nav__group {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    padding-top: 4px;
+    border-bottom: 4px solid transparent;
+    transition: border-color 100ms ease;
+}
+.nav .nav__group:hover,
+.nav .nav__group.active,
+.nav .nav__group.open {
+    border-color: var(--color-on-primary);
+}
+/* Gạch chân do nhóm đảm nhiệm, tab bên trong không cần gạch riêng */
+.nav .nav__group .nav__tab,
+.nav .nav__group .nav__tab.router-link-active,
+.nav .nav__group .nav__tab:hover {
+    border-bottom: none;
+    padding-top: 0;
+    padding-right: 0.25rem;
+}
+.nav .nav__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+.nav .nav__chevron {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 150ms ease;
+}
+.nav .nav__group.open .nav__chevron {
+    transform: translateY(2px) rotate(-135deg);
+}
+.nav .nav__menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: 12rem;
+    padding: 0.5rem;
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 1rem rgba(0, 0, 0, 0.35);
+    z-index: 100;
+}
+.nav .nav__menu-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+}
+.nav .nav__menu-item:hover,
+.nav .nav__menu-item.router-link-active {
+    background-color: var(--color-background-hover);
+}
+.nav .nav__menu-item.router-link-active {
+    font-weight: 700;
 }
