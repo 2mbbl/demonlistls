@@ -118,7 +118,7 @@ export default {
                         </ol>
                     </template>
                     <h3>QUY TẮC</h3>
-                    <a href="https://docs.google.com/document/d/12Nu5VhQmFTw0wOivpseR9MOdUqSCTxqkmpZclTF90Ik/edit?usp=sharing">Xem tại đây</a>
+                    <a href="https://docs.google.com/document/d/12Nu5VhQmFTw0wOivpseR9MOdUqSCTxqkmpZclTF90Ik/edit?usp=sharing">Ấn để xem</a>
                 </div>
             </div>
         </main>
