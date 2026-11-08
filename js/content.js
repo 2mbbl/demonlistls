@@ -9,10 +9,12 @@ const dir = '/data';
  * Directory containing `_list.json` and all levels of each list.
  * - main:   /data         -> the regular list
  * - mobile: /data/mobile  -> the mobile list (own levels/records)
+ * - challenge: /data/challenge -> the challenge list (own levels/records)
  */
 const listDirs = {
     main: dir,
     mobile: `${dir}/mobile`,
+    challenge: `${dir}/challenge`,
 };
 
 export async function fetchList(mode = 'main') {
