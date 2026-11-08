@@ -51,7 +51,7 @@
                     :class="{ open: store.openMenu === group.key, active: isGroupActive(group) }"
                 >
                     <router-link class="nav__tab" :to="group.list">
-                        <span class="type-label-lg">GeoDat</span>
+                        <span class="type-label-lg">{{ group.label }}</span>
                     </router-link>
                     <button
                         class="nav__arrow"
