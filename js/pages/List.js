@@ -17,7 +17,7 @@ const roleIconMap = {
 export default {
     components: { Spinner, LevelAuthors },
     props: {
-        // 'main' = List, 'mobile' = Mobile List
+        // 'main' = List, 'mobile' = Mobile List, 'challenge' = Challenge List
         mode: {
             type: String,
             default: 'main',
@@ -36,7 +36,7 @@ export default {
                     placeholder="Tìm level..."
                 >
                 <p class="list-empty" v-if="list && list.length === 0">
-                    Chưa có level nào trong {{ mode === 'mobile' ? 'Mobile List' : 'List' }}.
+                    Chưa có level nào trong {{ listLabel }}.
                 </p>
                 <table class="list" v-if="list">
                     <tr
@@ -119,25 +119,7 @@ export default {
                     </template>
                     <h3>Submission Requirements</h3>
                     <p>
-                        Chỉ những player ở Lạng Sơn hoặc có quê quán ở Lạng Sơn
-                    </p>
-                    <p>
-                        Chỉ nhận record thông qua "Submit Record"
-                    </p>
-                    <p>
-                        Từ Insane Demon trở lên cần video chứng minh
-                    </p>
-                    <p>
-                        Từ Extreme Demon trở lên cần video chứng minh và video thô
-                    </p>
-                    <p>
-                        Từ top 176 trở đi sẽ không được cộng điểm
-                    </p>
-                    <p>
-                        Hard/Insane Demon chỉ 100% mới được chấp nhận, còn Extreme Demon sẽ có % cụ thể để được cộng điểm
-                    </p>
-                    <p>
-                        Bất kì Extreme Demon nào đạt được trên hoặc bằng 50% đều CÓ THỂ được ghi vào List
+                        https://docs.google.com/document/d/12Nu5VhQmFTw0wOivpseR9MOdUqSCTxqkmpZclTF90Ik/edit?usp=sharing
                     </p>
                 </div>
             </div>
@@ -155,6 +137,13 @@ export default {
         mobileDetailOpen: false,
     }),
     computed: {
+        listLabel() {
+            return (
+                { main: 'List', mobile: 'Mobile List', challenge: 'Challenge List' }[
+                    this.mode
+                ] ?? 'List'
+            );
+        },
         level() {
             return this.list?.[this.selected]?.[0] ?? null;
         },
