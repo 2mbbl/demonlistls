@@ -30,6 +30,7 @@ const navGroups = [
         label: 'Challenge List',
         list: '/challenge',
         board: '/challenge-leaderboard',
+        creators: '/challenge-creators',
     },
 ];
 
@@ -38,7 +39,11 @@ const app = Vue.createApp({
     methods: {
         isGroupActive(group) {
             const path = this.$route.path;
-            return path === group.list || path === group.board;
+            return (
+                path === group.list ||
+                path === group.board ||
+                path === group.creators
+            );
         },
     },
     mounted() {
