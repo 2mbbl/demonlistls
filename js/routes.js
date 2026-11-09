@@ -1,6 +1,7 @@
 import List from './pages/List.js';
 import Leaderboard from './pages/Leaderboard.js';
 import Roulette from './pages/Roulette.js';
+import Creators from './pages/Creators.js';
 
 // Mobile List / Challenge List (và Leaderboard của chúng) dùng lại code của List / Leaderboard.
 // Mỗi bản là một component riêng (object khác nhau) để khi chuyển tab,
@@ -9,6 +10,8 @@ const MobileList = { ...List, name: 'MobileList' };
 const MobileLeaderboard = { ...Leaderboard, name: 'MobileLeaderboard' };
 const ChallengeList = { ...List, name: 'ChallengeList' };
 const ChallengeLeaderboard = { ...Leaderboard, name: 'ChallengeLeaderboard' };
+
+const ChallengeCreators = { ...Creators, name: 'ChallengeCreators' };
 
 export default [
     { path: '/', component: List, props: { mode: 'main' } },
@@ -23,6 +26,11 @@ export default [
     {
         path: '/challenge-leaderboard',
         component: ChallengeLeaderboard,
+        props: { mode: 'challenge' },
+    },
+    {
+        path: '/challenge-creators',
+        component: ChallengeCreators,
         props: { mode: 'challenge' },
     },
     { path: '/roulette', component: Roulette },
