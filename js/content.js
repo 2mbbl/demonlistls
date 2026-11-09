@@ -185,3 +185,63 @@ export async function fetchLeaderboard(mode = 'main') {
     // Sort by total score
     return [res.sort((a, b) => b.total - a.total), errs];
 }
+
+/**
+ * Bảng xếp hạng Creators: mỗi level nằm trong list tính 1 điểm cho mỗi creator của level đó.
+ * Trả về [danh sách creators đã sắp xếp, danh sách level lỗi].
+ */
+export async function fetchCreators(mode = 'challenge') {
+    const list = await fetchList(mode);
+    if (!list) {
+        return [[], ['_list']];
+    }
+
+    const creatorMap = {};
+    const errs = [];
+    list.forEach(([level, err], rank) => {
+        if (err) {
+            errs.push(err);
+            return;
+        }
+
+        // Level có thể có nhiều creator; nếu để trống thì dùng `author`
+        let names = Array.isArray(level.creators) ? level.creators : [];
+        if (names.length === 0 && level.author) names = [level.author];
+
+        // Tránh tính trùng nếu 1 creator bị ghi 2 lần trong cùng 1 level
+        const seen = new Set();
+        names.forEach((name) => {
+            const lower = String(name).trim().toLowerCase();
+            if (!lower || seen.has(lower)) return;
+            seen.add(lower);
+
+            // Gộp tên không phân biệt hoa/thường
+            const creator =
+                Object.keys(creatorMap).find((u) => u.toLowerCase() === lower) ||
+                String(name).trim();
+            creatorMap[creator] ??= [];
+            creatorMap[creator].push({
+                rank: rank + 1,
+                level: level.name,
+                link: level.verification,
+            });
+        });
+    });
+
+    const res = Object.entries(creatorMap).map(([user, levels]) => ({
+        user,
+        total: levels.length,
+        levels,
+    }));
+
+    // Nhiều level nhất lên trước; bằng điểm thì ai có level xếp cao hơn trong list đứng trước
+    return [
+        res.sort(
+            (a, b) =>
+                b.total - a.total ||
+                a.levels[0].rank - b.levels[0].rank ||
+                a.user.localeCompare(b.user),
+        ),
+        errs,
+    ];
+}
