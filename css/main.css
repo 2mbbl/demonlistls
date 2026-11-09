@@ -72,6 +72,8 @@ header .logo {
     display: flex;
     align-items: center;
     gap: 0.3rem;
+    /* Dịch logo sang phải: mép phải của "v1.0.3" dừng ở khoảng x = 300px (màn 1366px) */
+    margin-left: 4.6rem;
 }
 header .logo .logo__img {
     height: 3rem;
