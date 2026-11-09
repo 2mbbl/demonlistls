@@ -58,7 +58,7 @@ export default {
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
-                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
+                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :victor-label="mode === 'challenge' ? 'Verifier' : 'First victor'"></LevelAuthors>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
                         <li>
