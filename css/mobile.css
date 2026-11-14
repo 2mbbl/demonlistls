@@ -10,6 +10,11 @@
  *  - Trang List / Leaderboard: các khung (danh sách -> chi tiết -> thông tin)
  *    cũng vuốt ngang và tự dừng từng khung.
  */
+/* Thanh phụ dưới header: chỉ dành cho điện thoại */
+.mobile-bar {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     :root {
         --header-h: 3.5rem;
@@ -50,6 +55,58 @@
         align-items: center;
     }
     header .logo .logo__badge {
+        display: none;
+    }
+
+    /* ===== Thanh phụ: lời nhắc vuốt ngang + nút sáng/tối + Discord ===== */
+    .mobile-bar {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        flex: 0 0 auto;
+        height: 2.25rem;
+        padding-inline: 0.75rem 0.5rem;
+        background-color: var(--color-primary);
+        color: var(--color-on-primary);
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .mobile-bar .mobile-bar__hint {
+        flex: 1 1 0;
+        min-width: 0;
+        margin: 0;
+        font-size: 0.65rem;
+        line-height: 1.5;
+        white-space: nowrap; /* luôn chỉ 1 dòng */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        opacity: 0.85;
+    }
+    /* Bỏ phần đệm căn lề chữ mặc định của <p> (typography.css) để chữ không bị cắt */
+    .mobile-bar .mobile-bar__hint::before,
+    .mobile-bar .mobile-bar__hint::after {
+        display: none;
+    }
+    .mobile-bar .mobile-bar__icon {
+        flex: 0 0 auto;
+        height: 2rem;
+        width: 2rem;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background-color: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-bar .mobile-bar__icon:active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .mobile-bar .mobile-bar__icon img {
+        height: 1.25rem;
+    }
+    /* Nút sáng/tối và Discord đã chuyển xuống thanh phụ, trong thanh điều hướng chỉ còn Submit Record */
+    .nav .nav__actions .nav__icon {
         display: none;
     }
 
