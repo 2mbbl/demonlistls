@@ -1,4 +1,10 @@
-import { round, score, recordScore, progressScore } from './score.js';
+import {
+    round,
+    score,
+    recordScore,
+    progressScore,
+    RANKED_LIMIT,
+} from './score.js';
  
 /**
  * Path to the directory containing `_editors.json` and the main list
@@ -138,11 +144,13 @@ export async function fetchLeaderboard(mode = 'main') {
     // verifier or as a regular record holder.
     Object.values(scoreMap).forEach((scores) => {
         const { verified, completed } = scores;
+        // Only levels in the top RANKED_LIMIT are tiered. Levels below that
+        // keep their flat points (see legacyPoints) and don't take up a tier slot.
         [...verified, ...completed]
+            .filter((record) => record.rank <= RANKED_LIMIT)
             .sort((a, b) => b.score - a.score)
             .forEach((record, index) => {
-                record.score =
-                    record.rank > 175 ? 0 : recordScore(record.score, index + 1);
+                record.score = recordScore(record.score, index + 1);
             });
     });
  
@@ -158,7 +166,7 @@ export async function fetchLeaderboard(mode = 'main') {
             .sort((a, b) => b.score - a.score)
             .forEach((record, index) => {
                 record.score =
-                    record.rank > 175
+                    record.rank > RANKED_LIMIT
                         ? 0
                         : progressScore(
                               record.score,
