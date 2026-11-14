@@ -1,0 +1,237 @@
+/*
+ * Giao diện điện thoại (màn hình <= 768px). Không ảnh hưởng giao diện máy tính.
+ * File này phải được nạp SAU cùng để ghi đè các quy tắc của máy tính.
+ *
+ * Ý tưởng:
+ *  - Header: logo + chữ DLLS bên trái, thanh điều hướng bên phải.
+ *  - Thanh điều hướng vuốt ngang, mỗi mục là một "nấc" (scroll-snap) nên tự dừng
+ *    đúng vị trí, người chơi không phải tự chỉnh. "List" luôn là mục đầu tiên.
+ *  - Mỗi list vẫn giữ mũi tên để mở Leaderboard (menu thả xuống toàn chiều rộng).
+ *  - Trang List / Leaderboard: các khung (danh sách -> chi tiết -> thông tin)
+ *    cũng vuốt ngang và tự dừng từng khung.
+ */
+@media screen and (max-width: 768px) {
+    :root {
+        --header-h: 3.5rem;
+    }
+
+    @supports (height: 100dvh) {
+        html,
+        body {
+            height: 100dvh;
+        }
+    }
+
+    /* ===== Header ===== */
+    header {
+        height: var(--header-h);
+        padding-inline: 0.75rem 0;
+        column-gap: 0.5rem;
+        align-items: stretch;
+    }
+    header .logo {
+        margin-left: 0;
+        flex: 0 0 auto;
+        gap: 0.4rem;
+    }
+    header .logo .logo__img {
+        height: 2.25rem;
+    }
+    header .logo .logo__text h2 {
+        font-size: 1.5rem;
+        line-height: 1;
+        letter-spacing: -0.5px;
+    }
+    header .logo .logo__text h2::before,
+    header .logo .logo__text h2::after {
+        display: none;
+    }
+    header .logo .logo__text {
+        align-items: center;
+    }
+    header .logo .logo__badge {
+        display: none;
+    }
+
+    /* ===== Thanh điều hướng vuốt ngang, tự dừng theo từng mục ===== */
+    header .nav {
+        flex: 1 1 0;
+        min-width: 0; /* bắt buộc để flex item được phép cuộn thay vì phình ra */
+        column-gap: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    header .nav::-webkit-scrollbar {
+        display: none;
+    }
+    .nav > .nav__group,
+    .nav > .nav__tab,
+    .nav > .nav__actions {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        scroll-snap-stop: always; /* vuốt mạnh cũng chỉ qua từng mục một */
+    }
+    .nav > .nav__group {
+        width: 9.25rem;
+    }
+    .nav > .nav__tab {
+        width: 6.5rem;
+        padding-top: 4px;
+    }
+    .nav .nav__group .nav__tab {
+        padding-inline: 0.25rem;
+    }
+    .nav .type-label-lg {
+        white-space: nowrap;
+        font-size: 0.95rem;
+    }
+    .nav .nav__arrow {
+        width: 1.75rem;
+    }
+    .nav > .nav__actions {
+        padding-inline: 0.5rem 0.75rem;
+    }
+
+    /* Menu Leaderboard: dùng position fixed để không bị thanh cuộn ngang cắt mất */
+    .nav .nav__menu {
+        position: fixed;
+        top: calc(var(--header-h) + 0.25rem);
+        left: 0.75rem;
+        right: 0.75rem;
+        min-width: 0;
+    }
+    .nav .nav__menu-item {
+        padding: 1rem;
+    }
+
+    /* ===== Trang List: 3 khung vuốt ngang (danh sách | level | thông tin) ===== */
+    main.page-list {
+        display: flex;
+        column-gap: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+    }
+    main.page-list::-webkit-scrollbar {
+        display: none;
+    }
+    main.page-list > div {
+        flex: 0 0 100%;
+        min-width: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        overflow-y: auto;
+    }
+    .page-list .list-container,
+    .page-list .level-container,
+    .page-list .meta-container {
+        padding: 1rem;
+    }
+    .page-list .level-container .level {
+        padding-right: 0;
+        max-width: none;
+        gap: 1.25rem;
+    }
+    .page-list .level-container .level h1 {
+        font-size: 2rem;
+        line-height: 2.25rem;
+        letter-spacing: -1px;
+        overflow-wrap: anywhere;
+    }
+    .page-list .level-container .level h2 {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        letter-spacing: -0.5px;
+    }
+    .page-list .level-container .level .stats {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .page-list .level-container .level .stats li {
+        gap: 0.5rem;
+    }
+
+    /* ===== Leaderboard / Creators: 2 khung vuốt ngang (bảng xếp hạng | người chơi) ===== */
+    .page-leaderboard {
+        display: flex;
+        column-gap: 0;
+        max-width: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+    }
+    .page-leaderboard::-webkit-scrollbar {
+        display: none;
+    }
+    .page-leaderboard > div {
+        flex: 0 0 100%;
+        min-width: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        overflow-y: auto;
+    }
+    .page-leaderboard .error-container:not(:has(.error)) {
+        display: none;
+    }
+    .page-leaderboard .board-container,
+    .page-leaderboard .player-container {
+        padding: 1rem;
+    }
+    .page-leaderboard .player {
+        padding-right: 0;
+        gap: 1.25rem;
+    }
+    .page-leaderboard .player h1 {
+        font-size: 2rem;
+        line-height: 2.25rem;
+        letter-spacing: -1px;
+        overflow-wrap: anywhere;
+    }
+    .page-leaderboard .player h2 {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        letter-spacing: -0.5px;
+    }
+    .page-leaderboard .player h3 {
+        overflow-wrap: anywhere;
+    }
+    .page-leaderboard .player .table tr td:not(:last-child) {
+        padding-right: 1rem;
+    }
+
+    /* ===== Roulette: xếp thành 1 cột, cuộn dọc ===== */
+    main.page-roulette {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    main.page-roulette > div {
+        overflow-y: visible;
+        grid-column: auto;
+    }
+    .page-roulette .sidebar {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .page-roulette .levels-container {
+        padding: 0 1rem;
+    }
+    .page-roulette .levels {
+        padding-block: 1rem;
+        gap: 1rem;
+    }
+    .page-roulette .levels .level {
+        grid-template-columns: 7rem 1fr;
+    }
+    .page-roulette .toasts-container {
+        margin: 0 1rem 1rem;
+    }
+}
