@@ -12,6 +12,12 @@
             "link": "https://www.youtube.com/watch?v=1CTtwthBRTw&t=8s", 
             "percent": 100, 
             "hz": 144 
+        },
+        {
+            "user": "ztubi",
+            "link": "https://www.youtube.com/watch?v=nO4rdUUT_aI", 
+            "percent": 100, 
+            "hz": 0 
         }
     ]
 }
