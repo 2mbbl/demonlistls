@@ -10,7 +10,8 @@
 }
 
 main.dark,
-header.dark {
+header.dark,
+.mobile-bar.dark {
     color-scheme: dark;
     --color-background: #1c1b1f;
     --color-on-background: white;
