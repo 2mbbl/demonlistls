@@ -1,6 +1,6 @@
 import { store } from "../main.js";
 import { embed } from "../util.js";
-import { score } from "../score.js";
+import { score, RANKED_LIMIT } from "../score.js";
 import { fetchEditors, fetchList } from "../content.js";
  
 import Spinner from "../components/Spinner.js";
@@ -44,8 +44,7 @@ export default {
                         v-show="matchesSearch(level, err)"
                     >
                         <td class="rank">
-                            <p v-if="i + 1 <= 175" class="type-label-lg">#{{ i + 1 }}</p>
-                            <p v-else class="type-label-lg">Legacy</p>
+                            <p class="type-label-lg">#{{ i + 1 }}</p>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selectLevel(i)">
@@ -75,9 +74,8 @@ export default {
                         </li>
                     </ul>
                     <h2>Records</h2>
-                    <p v-if="selected + 1 <= 175"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
-                    <p v-else-if="selected +1 <= 175"><strong>100%</strong> or better to qualify</p>
-                    <p v-else>This level does not accept new records.</p>
+                    <p v-if="selected + 1 <= RANKED_LIMIT"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
+                    <p v-else><strong>100%</strong> or better to qualify</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
                             <td class="percent">
@@ -131,6 +129,7 @@ export default {
         search: "",
         errors: [],
         roleIconMap,
+        RANKED_LIMIT,
         store,
         mobileDetailOpen: false,
     }),
