@@ -58,6 +58,12 @@ header {
         display: grid;
         padding-inline: 0;
     }
+    /* Nới thanh điều hướng: từ cột giữa kéo sang hết cột phải, dừng cách mép phải ~16vw
+       (tại màn 1366px thì nút Submit Record kết thúc ở khoảng x = 1150px) */
+    header .nav {
+        grid-column: 2 / 4;
+        margin-right: 16vw;
+    }
 }
 /* Màn hình hẹp (điện thoại dùng viewport 1024px): thu gọn header cho vừa 5 tab */
 @media screen and (max-width: 1100px) {
