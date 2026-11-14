@@ -56,6 +56,39 @@ const app = Vue.createApp({
         });
     },
 });
+const isMobileView = () => window.matchMedia('(max-width: 768px)').matches;
+
+// Giao diện điện thoại: cuộn thanh điều hướng để mục đang mở (List, Mobile List...)
+// nằm ngay đầu thanh, đúng vào "nấc" tự dừng.
+function scrollNavToActive() {
+    if (!isMobileView()) return;
+    const nav = document.querySelector('header .nav');
+    const active =
+        nav &&
+        nav.querySelector(
+            ':scope > .nav__group.active, :scope > .nav__tab.router-link-active'
+        );
+    if (!active) return;
+    const left =
+        nav.scrollLeft +
+        active.getBoundingClientRect().left -
+        nav.getBoundingClientRect().left;
+    nav.scrollTo({ left, behavior: 'smooth' });
+}
+
+// Giao diện điện thoại: chọn level / người chơi thì tự vuốt sang khung chi tiết
+document.addEventListener('click', (e) => {
+    if (!isMobileView()) return;
+    const btn = e.target.closest(
+        '.page-list .list .level button, .page-leaderboard .board .user button'
+    );
+    if (!btn) return;
+    const pane = btn.closest('.page-list, .page-leaderboard');
+    requestAnimationFrame(() =>
+        pane.scrollTo({ left: pane.clientWidth, behavior: 'smooth' })
+    );
+});
+
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHashHistory(),
     routes,
@@ -64,8 +97,12 @@ const router = VueRouter.createRouter({
 // Chuyển trang thì đóng menu
 router.afterEach(() => {
     store.closeMenu();
+    Vue.nextTick(scrollNavToActive);
 });
 
 app.use(router);
 
 app.mount('#app');
+
+// Mở thẳng một đường dẫn (vd. /#/challenge): đưa mục đó vào đúng nấc ngay khi tải xong
+router.isReady().then(() => setTimeout(scrollNavToActive, 0));
