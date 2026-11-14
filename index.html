@@ -42,7 +42,7 @@
                 <img src="/assets/logo.png" alt="GDLS Demonlist" class="logo__img" />
                 <div class="logo__text">
                     <h2>DLLS</h2>
-                    <span class="logo__badge">v1.0.5</span>
+                    <span class="logo__badge">v1.0.4</span>
                 </div>
             </div>
             <nav class="nav">
@@ -104,6 +104,30 @@
                 </div>
             </nav>
         </header>
+        <!-- Chỉ hiện trên điện thoại (xem css/mobile.css): lời nhắc vuốt ngang + nút sáng/tối + Discord -->
+        <div class="mobile-bar" :class="{ dark: store.dark }">
+            <p class="mobile-bar__hint">
+                Có thể vuốt ngang phần List để thấy các list khác
+            </p>
+            <button
+                class="mobile-bar__icon"
+                type="button"
+                aria-label="Chế độ sáng/tối"
+                @click.prevent="store.toggleDark()"
+            >
+                <img
+                    :src="store.dark ? '/assets/light.svg' : '/assets/dark.svg'"
+                    alt=""
+                />
+            </button>
+            <a
+                class="mobile-bar__icon"
+                href="https://discord.gg/zjW3fRv6NV"
+                aria-label="Discord"
+            >
+                <img src="/assets/discord.svg" alt="Discord Logo" />
+            </a>
+        </div>
         <router-view :class="{ dark: store.dark }"></router-view>
     </body>
 </html>
