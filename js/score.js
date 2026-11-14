@@ -4,6 +4,28 @@
 const scale = 3;
  
 /**
+ * Levels ranked 1..RANKED_LIMIT use the full scoring formula.
+ * Levels below that have no upper limit and are worth flat points (see legacyPoints).
+ */
+export const RANKED_LIMIT = 175;
+
+/**
+ * Flat points awarded for completing (100%) a level ranked below RANKED_LIMIT.
+ *   176 - 300  : 1.5 pt / level
+ *   301 - 500  : 1 pt   / level
+ *   501 - 1000 : 0.5 pt / level
+ *   1001+      : 0.25 pt / level (no upper limit)
+ * @param {Number} rank Position on the list (must be > RANKED_LIMIT)
+ * @returns {Number}
+ */
+export function legacyPoints(rank) {
+    if (rank <= 300) return 1.5;
+    if (rank <= 500) return 1;
+    if (rank <= 1000) return 0.5;
+    return 0.25;
+}
+
+/**
  * Calculate the score awarded when having a certain percentage on a list level
  * @param {Number} rank Position on the list
  * @param {Number} percent Percentage of completion
@@ -11,8 +33,9 @@ const scale = 3;
  * @returns {Number}
  */
 export function score(rank, percent, minPercent) {
-    if (rank > 175) {
-        return 0;
+    if (rank > RANKED_LIMIT) {
+        // Flat points, and only for a full (100%) completion
+        return percent === 100 ? legacyPoints(rank) : 0;
     }
  
     // Old formula
