@@ -15,11 +15,20 @@
 .nav .nav__tab.router-link-active {
     border-color: var(--color-on-primary);
 }
+/* Các mục (List, Mobile List, Challenge List, Roulette) cùng giãn đều để lấp đầy
+   chiều ngang nav: khoảng cách giữa các mục bằng nhau, không để lại kẽ hở */
+.nav > .nav__tab,
+.nav > .nav__group {
+    flex: 1 1 auto;
+}
+.nav .nav__group .nav__tab {
+    flex: 1 1 auto;
+}
 .nav .nav__tab:hover {
     border-color: var(--color-on-primary);
 }
 .nav .nav__actions {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
