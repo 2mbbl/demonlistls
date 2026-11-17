@@ -7,6 +7,12 @@
     "percentToQualify": 60, 
     "password": "IDK", 
     "records": [
+        {
+            "user": "LyMay",
+            "link": "https://www.youtube.com/watch?v=LCNk1BDVBIE",
+            "percent": 91,
+            "hz": 60
+        }
         
     ]
 }
